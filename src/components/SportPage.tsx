@@ -45,7 +45,7 @@ export default function SportPage({ sport }: SportPageProps) {
         {/* Introduction */}
         <section className="mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">Présentation</h2>
-          <p className="text-lg text-gray-700 leading-relaxed">{sport.intro}</p>
+          <div className="text-lg text-gray-700 leading-relaxed whitespace-pre-line">{sport.intro}</div>
         </section>
 
         {/* Content Image */}
