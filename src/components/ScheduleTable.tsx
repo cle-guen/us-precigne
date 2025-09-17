@@ -19,9 +19,9 @@ export default function ScheduleTable({ schedule, sportName }: ScheduleTableProp
     <div>
       {/* Section lieu si lieu unique */}
       {hasSingleLocation && singleLocation && (
-        <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg">
-          <h3 className="text-sm font-medium text-red-900 mb-1">Lieu</h3>
-          <p className="text-sm text-red-700">{singleLocation}</p>
+        <div className="mb-4 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+          <h3 className="text-sm font-medium text-gray-900 mb-1">Lieu</h3>
+          <p className="text-sm text-gray-700">{singleLocation}</p>
         </div>
       )}
 
