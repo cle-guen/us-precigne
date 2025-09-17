@@ -26,12 +26,12 @@ export default function SportPage({ sport }: SportPageProps) {
         <div className="relative z-10 text-center text-white">
           {sport.logo && (
             <div className="mb-4 flex justify-center">
-              <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-full shadow-xl p-3 flex items-center justify-center hover:scale-105 transition-transform duration-300 animate-pulse">
+              <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center hover:scale-105 transition-transform duration-300">
                 <Image
                   src={sport.logo}
                   alt={`Logo ${sport.name}`}
-                  width={64}
-                  height={64}
+                  width={80}
+                  height={80}
                   className="object-contain"
                 />
               </div>
