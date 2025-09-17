@@ -5,20 +5,22 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-red-700 to-gray-900 text-white py-20">
+      <section className="bg-gray-50 py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            US Précigné
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 text-red-100">
-            Union Sportive de Précigné - Association omnisports depuis 1921
-          </p>
-          <a
-            href="#presentation"
-            className="inline-block bg-white text-red-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-          >
-            Découvrir notre histoire
-          </a>
+          <div className="bg-white rounded-2xl shadow-lg border-l-8 border-red-700 p-8 md:p-12">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
+              US Précigné
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 text-gray-600">
+              Union Sportive de Précigné - Association omnisports depuis 1921
+            </p>
+            <a
+              href="#presentation"
+              className="inline-block bg-red-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-800 transition-colors shadow-lg"
+            >
+              Découvrir notre histoire
+            </a>
+          </div>
         </div>
       </section>
 
