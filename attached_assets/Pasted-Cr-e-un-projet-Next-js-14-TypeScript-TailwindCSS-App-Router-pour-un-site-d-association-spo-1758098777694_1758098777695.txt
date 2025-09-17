@@ -1,0 +1,55 @@
+Crée un projet **Next.js 14 + TypeScript + TailwindCSS** (App Router) pour un site d’association sportive.
+Utiliser **pnpm** (pas npm). Fournir tous les scripts avec pnpm.
+
+### Pages & routes
+- Accueil: `/` liste les sports (Football, Gym, Judo, Tennis, Yoga) sous forme de cartes (image + nom + lien).
+- Page d’un sport (même template pour tous): `/sports/[slug]`
+  - **Hero/cover** pleine largeur avec une image (alt descriptif).
+  - **Bloc présentation**: titre du sport + texte d’intro.
+  - **2e image** illustrant la section.
+  - **Tableau d’horaires** (jour, horaires, lieu, note optionnelle).
+  - **Contacts**: liens avec icônes (Facebook), téléphone cliquable (tel:), email cliquable (mailto:).
+  - **Documents**: liste de PDF *téléchargeables* **et** *consultables* en ligne (aperçu embarqué via `<object>` ou `<iframe>` avec fallback lien de téléchargement).
+- Actualités: `/actualites`
+  - Liste d’articles (titre, date, extrait, lien soit vers PDF soit vers texte complet intégré).
+  - Option simple: affichage en liste (pas besoin d’éditeur, données en fichier TS).
+
+### Données & types
+- Types centralisés: `src/lib/types.ts`
+  - `ContactLinks { facebook?: string; phone?: string; email?: string; website?: string }`
+  - `ScheduleEntry { day: string; time: string; location?: string; note?: string }`
+  - `Sport { slug: string; name: string; heroImage: string; intro: string; contentImage?: string; schedule: ScheduleEntry[]; contacts: ContactLinks; pdfs?: { label: string; file: string }[] }`
+  - `NewsItem { id: string; title: string; date: string; excerpt: string; body?: string; pdf?: string }`
+- Données:
+  - `src/data/sports.ts` contient 5 sports (football, gym, judo, tennis, yoga) avec exemples d’horaires, contacts, PDF.
+  - `src/data/news.ts` contient 3 actus d’exemple (dont 1 avec PDF).
+- Images d’illustration: placer des placeholders dans `/public/images/` (ex: `football-hero.jpg`, `football-2.jpg`, etc., même logique pour chaque sport).
+- PDFs d’exemple: `/public/pdfs/` (ex: `inscription.pdf`, `reglement.pdf`).
+
+### App Router & composants
+- Dossier `app/`:
+  - `app/layout.tsx` avec `<header>` (menu: Accueil, Sports, Actualités) et `<footer>` (contacts généraux).
+  - `app/page.tsx` (Accueil).
+  - `app/sports/[slug]/page.tsx` (rendu dynamique d’un sport en important `sports.ts`). Si slug inconnu → 404.
+  - `app/actualites/page.tsx`.
+- Composants réutilisables dans `src/components/`:
+  - `SportCard.tsx`: carte pour la liste d’accueil.
+  - `SportPage.tsx`: composant qui reçoit un `Sport` et affiche **exactement**: Hero image, intro, 2e image, tableau d’horaires, liens contact, zone documents avec **aperçu PDF intégré** + bouton Télécharger.
+  - `ScheduleTable.tsx`: tableau accessible (th, scope, caption).
+  - `PdfViewer.tsx`: encapsule `<object type="application/pdf" data="...">` avec fallback lien download.
+  - `NewsList.tsx`: liste d’actus (carte avec date et extrait).
+- Accessibilité/SEO:
+  - Alt text pour toutes images, `aria-label` pour liens sociaux, sémantique nav/main/footer, meta de base dans `layout.tsx`.
+  - Liens tel/mail: `tel:+33...` et `mailto:...`.
+- Style:
+  - Tailwind responsive, container max-w-5xl, spacing généreux, titres h1/h2/h3 cohérents, boutons simples (primaire/secondaire).
+  - Hero: section avec `min-h-[40vh]`, image en background via `next/image` ou img responsive, overlay léger + titre.
+
+### Config & build
+- **pnpm** obligatoire. Scripts dans `package.json`:
+  - `"dev": "next dev"`, `"build": "next build"`, `"start": "next start"`, `"lint": "next lint"`.
+- `tailwind.config.ts` et `postcss.config.js` correctement configurés (fichiers globaux dans `app/globals.css` avec `@tailwind base; @tailwind components; @tailwind utilities;`).
+- **Static export prêt**: dans `next.config.ts`, ajouter:
+  ```ts
+  const nextConfig = { output: 'export' };
+  export default nextConfig;
