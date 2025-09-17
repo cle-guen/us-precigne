@@ -96,12 +96,12 @@ export default function Header() {
                         onClick={() => setIsDropdownOpen(false)}
                       >
                         {sport.logo && (
-                          <div className="w-6 h-6 flex items-center justify-center flex-shrink-0">
+                          <div className="w-5 h-5 flex items-center justify-center flex-shrink-0">
                             <Image
                               src={sport.logo}
                               alt={`Logo ${sport.name}`}
-                              width={24}
-                              height={24}
+                              width={20}
+                              height={20}
                               className="object-contain"
                             />
                           </div>
