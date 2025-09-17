@@ -1,19 +1,26 @@
-import { ScheduleEntry } from '@/lib/types';
+import { ScheduleEntry } from '@/lib/types'
 
 interface ScheduleTableProps {
-  schedule: ScheduleEntry[];
-  sportName: string;
+  schedule: ScheduleEntry[]
+  sportName: string
 }
 
-export default function ScheduleTable({ schedule, sportName }: ScheduleTableProps) {
+export default function ScheduleTable({
+  schedule,
+  sportName,
+}: ScheduleTableProps) {
   // Vérifier s'il y a des notes
-  const hasNotes = schedule.some(entry => entry.note && entry.note.trim() !== '');
-  
+  const hasNotes = schedule.some(
+    (entry) => entry.note && entry.note.trim() !== '',
+  )
+
   // Vérifier si tous les lieux sont identiques
-  const locations = schedule.map(entry => entry.location).filter(Boolean);
-  const uniqueLocations = [...new Set(locations)];
-  const hasSingleLocation = uniqueLocations.length === 1;
-  const singleLocation = hasSingleLocation ? uniqueLocations[0] : null;
+  const locations = schedule
+    .map((entry) => entry.location)
+    .filter((loc): loc is string => Boolean(loc))
+  const uniqueLocationsArr = Array.from(new Set(locations))
+  const hasSingleLocation = uniqueLocationsArr.length === 1
+  const singleLocation = hasSingleLocation ? uniqueLocationsArr[0] : null
 
   return (
     <div>
@@ -32,19 +39,31 @@ export default function ScheduleTable({ schedule, sportName }: ScheduleTableProp
           </caption>
           <thead className="bg-gray-50">
             <tr>
-              <th scope="col" className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th
+                scope="col"
+                className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+              >
                 Jour
               </th>
-              <th scope="col" className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th
+                scope="col"
+                className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+              >
                 Horaires
               </th>
               {!hasSingleLocation && (
-                <th scope="col" className="hidden sm:table-cell px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th
+                  scope="col"
+                  className="hidden sm:table-cell px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
                   Lieu
                 </th>
               )}
               {hasNotes && (
-                <th scope="col" className="hidden md:table-cell px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th
+                  scope="col"
+                  className="hidden md:table-cell px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
                   Note
                 </th>
               )}
@@ -57,11 +76,15 @@ export default function ScheduleTable({ schedule, sportName }: ScheduleTableProp
                   <div className="font-semibold">{entry.day}</div>
                   {/* Show location on mobile when multiple locations */}
                   {!hasSingleLocation && entry.location && (
-                    <div className="sm:hidden text-xs text-gray-500 mt-1">{entry.location}</div>
+                    <div className="sm:hidden text-xs text-gray-500 mt-1">
+                      {entry.location}
+                    </div>
                   )}
                   {/* Show note on mobile when exists */}
                   {hasNotes && entry.note && (
-                    <div className="md:hidden text-xs text-gray-500 mt-1">{entry.note}</div>
+                    <div className="md:hidden text-xs text-gray-500 mt-1">
+                      {entry.note}
+                    </div>
                   )}
                 </td>
                 <td className="px-3 sm:px-6 py-4 text-sm text-gray-500">
@@ -83,5 +106,5 @@ export default function ScheduleTable({ schedule, sportName }: ScheduleTableProp
         </table>
       </div>
     </div>
-  );
+  )
 }

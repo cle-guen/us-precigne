@@ -1,7 +1,7 @@
-import { notFound } from 'next/navigation'
-import { sports } from '@/data/sports'
 import SportPage from '@/components/SportPage'
+import { sports } from '@/data/sports'
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
 interface SportPageProps {
   params: {
@@ -15,12 +15,14 @@ export async function generateStaticParams() {
   }))
 }
 
-export async function generateMetadata({ params }: SportPageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: SportPageProps): Promise<Metadata> {
   const sport = sports.find((s) => s.slug === params.slug)
-  
+
   if (!sport) {
     return {
-      title: 'Sport non trouvé - Association Sportive'
+      title: 'Sport non trouvé - Association Sportive',
     }
   }
 

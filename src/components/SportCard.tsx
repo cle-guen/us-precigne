@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { Sport } from '@/lib/types';
+import { Sport } from '@/lib/types'
+import Image from 'next/image'
+import Link from 'next/link'
 
 interface SportCardProps {
-  sport: Sport;
+  sport: Sport
 }
 
 export default function SportCard({ sport }: SportCardProps) {
@@ -43,19 +43,31 @@ export default function SportCard({ sport }: SportCardProps) {
                 />
               </div>
             )}
-            <h3 className="text-lg sm:text-xl font-semibold text-gray-900">{sport.name}</h3>
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
+              {sport.name}
+            </h3>
           </div>
           <p className="text-gray-600 text-sm line-clamp-3">{sport.intro}</p>
           <div className="mt-4">
             <span className="inline-flex items-center text-red-700 text-sm font-medium group-hover:text-red-800">
               Découvrir
-              <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              <svg
+                className="ml-1 w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </span>
           </div>
         </div>
       </div>
     </Link>
-  );
+  )
 }

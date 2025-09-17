@@ -1,74 +1,80 @@
-'use client';
+'use client'
 
-import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
+import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 interface ImageModalProps {
-  images: string[];
-  currentIndex: number;
-  isOpen: boolean;
-  onClose: () => void;
-  onNavigate: (index: number) => void;
+  images: string[]
+  currentIndex: number
+  isOpen: boolean
+  onClose: () => void
+  onNavigate: (index: number) => void
 }
 
-export default function ImageModal({ images, currentIndex, isOpen, onClose, onNavigate }: ImageModalProps) {
-  const [imageLoaded, setImageLoaded] = useState(false);
+export default function ImageModal({
+  images,
+  currentIndex,
+  isOpen,
+  onClose,
+  onNavigate,
+}: ImageModalProps) {
+  const [imageLoaded, setImageLoaded] = useState(false)
 
   // Navigation avec les touches clavier
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (!isOpen) return;
+      if (!isOpen) return
 
       switch (event.key) {
         case 'Escape':
-          onClose();
-          break;
+          onClose()
+          break
         case 'ArrowLeft':
           if (currentIndex > 0) {
-            onNavigate(currentIndex - 1);
+            onNavigate(currentIndex - 1)
           }
-          break;
+          break
         case 'ArrowRight':
           if (currentIndex < images.length - 1) {
-            onNavigate(currentIndex + 1);
+            onNavigate(currentIndex + 1)
           }
-          break;
+          break
       }
-    };
+    }
 
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, currentIndex, images.length, onClose, onNavigate]);
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [isOpen, currentIndex, images.length, onClose, onNavigate])
 
   // Bloquer le scroll du body quand le modal est ouvert
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = 'hidden'
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = 'unset'
     }
 
     return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [isOpen]);
+      document.body.style.overflow = 'unset'
+    }
+  }, [isOpen])
 
   // Reset imageLoaded quand l'image change
   useEffect(() => {
-    setImageLoaded(false);
-  }, [currentIndex]);
+    setImageLoaded(false)
+  }, [currentIndex])
 
-  if (!isOpen) return null;
+  if (!isOpen) return null
 
-  const currentImage = images[currentIndex];
-  const hasMultipleImages = images.length > 1;
+  const currentImage = images[currentIndex]
+  const hasMultipleImages = images.length > 1
 
   return (
-    <div 
+    <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4"
       onClick={onClose}
     >
-      <div 
+      <div
         className="relative max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center"
         onClick={(e) => e.stopPropagation()}
       >
@@ -78,8 +84,18 @@ export default function ImageModal({ images, currentIndex, isOpen, onClose, onNa
           className="absolute top-4 right-4 z-10 p-2 bg-black bg-opacity-50 text-white rounded-full hover:bg-opacity-70 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white"
           aria-label="Fermer le modal"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
           </svg>
         </button>
 
@@ -90,8 +106,18 @@ export default function ImageModal({ images, currentIndex, isOpen, onClose, onNa
             className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-black bg-opacity-50 text-white rounded-full hover:bg-opacity-70 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white"
             aria-label="Image précédente"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
             </svg>
           </button>
         )}
@@ -103,8 +129,18 @@ export default function ImageModal({ images, currentIndex, isOpen, onClose, onNa
             className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-black bg-opacity-50 text-white rounded-full hover:bg-opacity-70 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white"
             aria-label="Image suivante"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
             </svg>
           </button>
         )}
@@ -116,7 +152,7 @@ export default function ImageModal({ images, currentIndex, isOpen, onClose, onNa
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white"></div>
             </div>
           )}
-          
+
           <Image
             src={currentImage}
             alt="Image en grand format"
@@ -138,8 +174,8 @@ export default function ImageModal({ images, currentIndex, isOpen, onClose, onNa
                 key={index}
                 onClick={() => onNavigate(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white ${
-                  index === currentIndex 
-                    ? 'bg-white' 
+                  index === currentIndex
+                    ? 'bg-white'
                     : 'bg-white bg-opacity-50 hover:bg-opacity-75'
                 }`}
                 aria-label={`Aller à l'image ${index + 1}`}
@@ -156,5 +192,5 @@ export default function ImageModal({ images, currentIndex, isOpen, onClose, onNa
         )}
       </div>
     </div>
-  );
+  )
 }

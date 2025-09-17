@@ -1,19 +1,21 @@
-import { NewsItem } from '@/lib/types';
+import { NewsItem } from '@/lib/types'
 
 export const news: NewsItem[] = [
   {
     id: 'judo-ecoles-decouvertes',
     title: 'Journées découvertes avec les écoles Judo',
     date: '2025-07-01',
-    excerpt: 'Le Judo proposera des journées découvertes avec l\'école publique et privée.',
-    body: 'Le Judo proposera des journées découvertes avec l\'école publique et privée. École privée de St Jean St Joseph le vendredi 1er juillet, puis école publique de la Voutonnière les 4 et 5 juillet.',
+    excerpt:
+      "Le Judo proposera des journées découvertes avec l'école publique et privée.",
+    body: "Le Judo proposera des journées découvertes avec l'école publique et privée. École privée de St Jean St Joseph le vendredi 1er juillet, puis école publique de la Voutonnière les 4 et 5 juillet.",
     sportSlug: 'judo',
   },
   {
     id: 'tennis-portes-ouvertes',
     title: 'Portes Ouvertes Tennis',
     date: '2025-06-22',
-    excerpt: 'Les mercredis 22 et 29 juin : Portes ouvertes Tennis, de 14h à 18h.',
+    excerpt:
+      'Les mercredis 22 et 29 juin : Portes ouvertes Tennis, de 14h à 18h.',
     body: 'Les mercredis 22 et 29 juin : Portes ouvertes Tennis, de 14h à 18h sur les terrains extérieurs de Précigné.',
     additionalImages: ['/images/news/flyer-portes-ouvertes-2022.avif'],
     sportSlug: 'tennis',
@@ -29,10 +31,11 @@ export const news: NewsItem[] = [
   },
   {
     id: 'yoga-initiation-ecole',
-    title: 'Journée initiation avec l\'école publique Yoga',
+    title: "Journée initiation avec l'école publique Yoga",
     date: '2025-06-10',
-    excerpt: 'Les 10 et 17 juin, initiation Yoga pour les élèves de l\'école publique.',
-    body: 'Les 10 et 17 juin, initiation Yoga pour les élèves de l\'école publique de St Jean St Joseph.',
+    excerpt:
+      "Les 10 et 17 juin, initiation Yoga pour les élèves de l'école publique.",
+    body: "Les 10 et 17 juin, initiation Yoga pour les élèves de l'école publique de St Jean St Joseph.",
     sportSlug: 'yoga',
   },
   {
@@ -63,19 +66,24 @@ export const news: NewsItem[] = [
   },
   {
     id: 'yoga-ecole-privee',
-    title: 'Journées Découvertes Yoga pour l\'école privée',
+    title: "Journées Découvertes Yoga pour l'école privée",
     date: '2025-05-05',
-    excerpt: 'Les 5 et 6 mai, journées découvertes Yoga pour les enfants de l\'école privée.',
-    body: 'Le 5 et 6 mai, journées découvertes Yoga pour les enfants de l\'école privée St Jean St Joseph.',
-    additionalImages: ['/images/news/yoga-prive-1.avif', '/images/news/yoga-prive-3.avif'],
+    excerpt:
+      "Les 5 et 6 mai, journées découvertes Yoga pour les enfants de l'école privée.",
+    body: "Le 5 et 6 mai, journées découvertes Yoga pour les enfants de l'école privée St Jean St Joseph.",
+    additionalImages: [
+      '/images/news/yoga-prive-1.avif',
+      '/images/news/yoga-prive-3.avif',
+    ],
     sportSlug: 'yoga',
   },
   {
     id: 'foot-100ans',
     title: '100 ans du Foot',
     date: '2023-07-01',
-    excerpt: 'Pour les 100 ans du Club de Football de Précigné, une soirée est organisée.',
+    excerpt:
+      'Pour les 100 ans du Club de Football de Précigné, une soirée est organisée.',
     body: 'Pour les 100 ans du Club de Football de Précigné, une soirée est organisée le 1er juillet 2023 (reportée à cause de la crise sanitaire).',
     sportSlug: 'football',
   },
-];
+]

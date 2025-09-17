@@ -1,7 +1,7 @@
 'use client'
-import React, { useState, useRef, useEffect } from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
+import { useEffect, useRef, useState } from 'react'
 import { sports } from '../data/sports'
 
 export default function Header() {
@@ -12,7 +12,10 @@ export default function Header() {
   // Fermer le menu quand on clique en dehors
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsDropdownOpen(false)
       }
     }
@@ -39,9 +42,16 @@ export default function Header() {
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-200">
-      <nav className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" role="navigation" aria-label="Navigation principale">
+      <nav
+        className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
+        role="navigation"
+        aria-label="Navigation principale"
+      >
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center gap-3 text-xl font-bold text-red-700 hover:text-red-800 transition-colors">
+          <Link
+            href="/"
+            className="flex items-center gap-3 text-xl font-bold text-red-700 hover:text-red-800 transition-colors"
+          >
             <div className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center flex-shrink-0">
               <Image
                 src="/images/logo-us-precigne.png"
@@ -49,20 +59,23 @@ export default function Header() {
                 width={32}
                 height={32}
                 className="object-contain"
-                style={{ width: "auto", height: "auto" }}
+                style={{ width: 'auto', height: 'auto' }}
               />
             </div>
             <span className="hidden sm:inline">US Précigné</span>
             <span className="sm:hidden">USP</span>
           </Link>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center justify-center space-x-6">
-            <Link href="/" className="text-gray-700 hover:text-red-700 transition-colors font-medium">
+            <Link
+              href="/"
+              className="text-gray-700 hover:text-red-700 transition-colors font-medium"
+            >
               Accueil
             </Link>
             <div className="relative" ref={dropdownRef}>
-              <button 
+              <button
                 className="text-gray-700 hover:text-red-700 transition-colors font-medium flex items-center gap-1"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 onMouseEnter={() => setIsDropdownOpen(true)}
@@ -70,19 +83,24 @@ export default function Header() {
                 aria-haspopup="true"
               >
                 Sports
-                <svg 
+                <svg
                   className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
-                  fill="none" 
-                  stroke="currentColor" 
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
                 </svg>
               </button>
-              
+
               {/* Desktop Dropdown Menu */}
               {isDropdownOpen && (
-                <div 
+                <div
                   className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50"
                   onMouseLeave={() => setIsDropdownOpen(false)}
                 >
@@ -113,7 +131,10 @@ export default function Header() {
                 </div>
               )}
             </div>
-            <Link href="/actualites" className="text-gray-700 hover:text-red-700 transition-colors font-medium">
+            <Link
+              href="/actualites"
+              className="text-gray-700 hover:text-red-700 transition-colors font-medium"
+            >
               Actualités
             </Link>
             <div className="flex items-center">
@@ -158,11 +179,26 @@ export default function Header() {
               aria-expanded={isMobileMenuOpen}
               aria-label="Menu de navigation"
             >
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 {isMobileMenuOpen ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 )}
               </svg>
             </button>
@@ -180,10 +216,12 @@ export default function Header() {
               >
                 Accueil
               </Link>
-              
+
               {/* Mobile Sports Section */}
               <div className="px-3 py-2">
-                <p className="text-sm font-semibold text-gray-500 mb-2">Sports</p>
+                <p className="text-sm font-semibold text-gray-500 mb-2">
+                  Sports
+                </p>
                 <div className="space-y-1 pl-3">
                   {sports.map((sport) => (
                     <Link
@@ -208,7 +246,7 @@ export default function Header() {
                   ))}
                 </div>
               </div>
-              
+
               <Link
                 href="/actualites"
                 className="block px-3 py-2 text-gray-700 hover:text-red-700 hover:bg-red-50 rounded-md font-medium transition-colors"
