@@ -7,6 +7,7 @@ This is a fully implemented Next.js 14 website for US Précigné (Union Sportive
 ## Recent Changes
 
 ### September 2025 Updates
+- **Color Scheme Transformation**: Complete transformation from blue color palette to red/black charter matching association's official branding. Updated all components, buttons, icons, and interactive elements with harmonious red-700/800 primary colors, gray-600/700 secondary colors, and red-50/100 subtle backgrounds. Hero section features elegant red-to-black gradient.
 - **Contact Links Updated**: All sports sections now display authentic contact information with real Facebook pages for Football, Judo, and Yoga sections
 - **Gym Section Integration**: Replaced placeholder content with authentic materials including real cover image (AVIF format) and 4 official PDF documents (affiche reprise gym, fiche inscription 2025-2026, questionnaire santé, résumé garanties MAIF)
 - **Judo Section Integration**: Updated with authentic cover image (AVIF format), removed content image and PDFs as none were provided by the association
