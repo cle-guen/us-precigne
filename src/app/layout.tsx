@@ -33,9 +33,12 @@ export default function RootLayout({
               <div>
                 <h3 className="text-lg font-semibold mb-4">Contact</h3>
                 <div className="space-y-2 text-gray-300">
-                  <p>📧 usprecigne.omnisports@gmail.com</p>
-                  <p>📞 +33 1 23 45 67 89</p>
-                  <p>📍 123 Rue du Sport, 75000 Paris</p>
+                  <a href="mailto:usprecigne.omnisports@gmail.com" className="block hover:text-white transition-colors">
+                    📧 usprecigne.omnisports@gmail.com
+                  </a>
+                  <a href="tel:+33123456789" className="block hover:text-white transition-colors">
+                    📞 +33 1 23 45 67 89
+                  </a>
                 </div>
               </div>
               <div>
@@ -64,9 +67,6 @@ export default function RootLayout({
                   <Link href="/actualites" className="block text-gray-300 hover:text-white transition-colors">
                     Actualités
                   </Link>
-                  <p className="text-gray-300">Horaires d&apos;ouverture:</p>
-                  <p className="text-gray-300 text-sm">Lun-Ven: 8h-22h</p>
-                  <p className="text-gray-300 text-sm">Sam-Dim: 8h-20h</p>
                 </div>
               </div>
             </div>
