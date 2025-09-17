@@ -1,8 +1,8 @@
-# Sports Association Website
+# US Précigné - Union Sportive Website
 
 ## Overview
 
-This is a fully implemented Next.js 14 website for a French sports association that showcases 5 sports activities: Football, Gymnastics, Judo, Tennis, and Yoga. The site features a beautiful homepage with sport cards, individual sport pages with detailed information, schedules, contact details, and embedded PDF document viewers. It includes a news section for announcements and events. The application is successfully configured for static export and has been tested to generate all required static files.
+This is a fully implemented Next.js 14 website for US Précigné (Union Sportive de Précigné), a French sports association founded in 1921. The site showcases 5 sports activities: Football, Gymnastics, Judo, Tennis, and Yoga. The site features a beautiful homepage with the association's real history, sport cards, individual sport pages with detailed information, schedules, contact details, and embedded PDF document viewers. It includes a news section for announcements and events. The application is successfully configured for static export and has been tested to generate all required static files.
 
 ## User Preferences
 
