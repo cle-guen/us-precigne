@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { NewsItem } from '@/lib/types';
+import { sports } from '@/data/sports';
 import ImageModal from './ImageModal';
 
 interface NewsListProps {
@@ -26,6 +27,12 @@ export default function NewsList({ news }: NewsListProps) {
     });
   };
 
+  const getSportLogo = (sportSlug?: string) => {
+    if (!sportSlug) return null;
+    const sport = sports.find(s => s.slug === sportSlug);
+    return sport?.logo || null;
+  };
+
   const openModal = (images: string[], index: number = 0) => {
     setModalState({ isOpen: true, images, currentIndex: index });
   };
@@ -43,18 +50,20 @@ export default function NewsList({ news }: NewsListProps) {
     <div className="space-y-8">
       {news.map((item) => (
         <article key={item.id} className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-          {item.image && (
-            <div className="relative h-48 w-full">
-              <Image
-                src={item.image}
-                alt={item.title}
-                fill
-                className="object-cover"
-              />
-            </div>
-          )}
-          <div className="p-6">
-            <header className="mb-4">
+          <div className="p-6 relative">
+            {/* Logo du sport en haut à droite */}
+            {getSportLogo(item.sportSlug) && (
+              <div className="absolute top-4 right-4">
+                <Image
+                  src={getSportLogo(item.sportSlug)!}
+                  alt={`Logo ${item.sportSlug}`}
+                  width={32}
+                  height={32}
+                  className="object-contain"
+                />
+              </div>
+            )}
+            <header className="mb-4 pr-12">
               <h2 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h2>
               <time dateTime={item.date} className="text-sm text-gray-500">
                 {formatDate(item.date)}

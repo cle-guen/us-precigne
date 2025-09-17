@@ -33,4 +33,5 @@ export interface NewsItem {
   pdf?: string;
   image?: string;
   additionalImages?: string[];
+  sportSlug?: string;
 }
