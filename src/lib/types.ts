@@ -31,4 +31,5 @@ export interface NewsItem {
   excerpt: string;
   body?: string;
   pdf?: string;
+  image?: string;
 }
