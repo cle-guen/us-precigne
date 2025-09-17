@@ -67,9 +67,9 @@ export const sports: Sport[] = [
     slug: 'tennis',
     name: 'Tennis',
     logo: '/images/logos/tennis-logo.webp',
-    heroImage: '/images/tennis-hero.jpg',
+    heroImage: '/images/tennis-hero.avif',
     intro: 'La section tennis créée au milieu des années 70 est affiliée à la FFT et propose découverte et pratique du tennis en loisir et en compétition, via différentes activités : école de tennis (4 à 18 ans) : initiation et perfectionnement ; cours adultes : initiation et perfectionnement ; découverte de la compétition jeunes et femmes débutantes (compétition libre, raquettes FFT) ; organisation de compétitions (tournois open et interne) ; participations aux championnats.',
-    contentImage: '/images/tennis-2.jpg',
+    contentImage: '/images/tennis-content.avif',
     schedule: [
       { day: 'Mercredi', time: 'École de tennis (enfants) – matin', location: 'Courts de tennis' },
       { day: 'Samedi', time: 'École de tennis (enfants) – matin', location: 'Courts de tennis' },
