@@ -92,9 +92,8 @@ export const sports: Sport[] = [
     slug: 'yoga',
     name: 'Yoga',
     logo: '/images/logos/yoga-logo.webp',
-    heroImage: '/images/yoga-hero.jpg',
+    heroImage: '/images/yoga-hero.avif',
     intro: 'Section créée en 2016 avec une soixantaine d\'adhérents adultes. Présidente : Nelly CHOQUET. Secrétariat : Sylvie BOURREAU. Trésorerie : Murielle REGNER. Cours assurés par Anna GEOFFROY (saison 2024/2025), enseignante diplômée de Yoga Alliance International, formée en Hatha et Vinyasa Yoga ainsi qu\'en Yoga Thérapie (méthode Green Yoga). Yoga adapté à tous les niveaux (débutants à expérimentés) avec séance incluant une méditation guidée. 1ère séance d\'essai gratuite.',
-    contentImage: '/images/yoga-2.jpg',
     schedule: [
       { day: 'Lundi', time: '14:30 - 16:00', location: 'Salle des Rivauderies (route de Sablé, près du stade de foot) — Précigné' },
       { day: 'Lundi', time: '16:15 - 17:45', location: 'Salle des Rivauderies — Précigné' },
