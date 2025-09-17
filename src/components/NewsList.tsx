@@ -92,6 +92,8 @@ export default function NewsList({ news }: NewsListProps) {
                         fill
                         className="object-cover hover:scale-105 transition-transform duration-200"
                         sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                        quality={90}
+                        unoptimized={imageSrc.endsWith('.avif')}
                       />
                       {/* Icône pour indiquer que l'image est cliquable */}
                       <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-20 transition-opacity duration-200 flex items-center justify-center">

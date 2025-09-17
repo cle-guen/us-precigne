@@ -124,6 +124,9 @@ export default function ImageModal({ images, currentIndex, isOpen, onClose, onNa
             className={`object-contain transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
             onLoad={() => setImageLoaded(true)}
             sizes="100vw"
+            quality={100}
+            priority
+            unoptimized={currentImage.endsWith('.avif')}
           />
         </div>
 
