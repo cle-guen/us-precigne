@@ -14,7 +14,7 @@ export const sports: Sport[] = [
       { day: 'Samedi', time: '14h00 - 16h00', location: 'Terrain A', note: 'Match amical' },
     ],
     contacts: {
-      facebook: 'https://facebook.com/football-club',
+      facebook: 'https://www.facebook.com/USPrecigne',
       phone: '+33123456789',
       email: 'football@association.fr',
     },
@@ -35,7 +35,6 @@ export const sports: Sport[] = [
       { day: 'Jeudi', time: '20:00 - 21:00', location: 'Salle omnisports' },
     ],
     contacts: {
-      facebook: 'TODO: URL Page Facebook Gym',
       email: 'nicetjolanglais@orange.fr',
       phone: '+33 6 31 73 57 54',
     },
@@ -59,8 +58,8 @@ export const sports: Sport[] = [
       { day: 'Jeudi', time: 'Soir', location: 'Dojo (Alain Rougé / Champagne)' },
     ],
     contacts: {
-      website: 'https://www.usprecignejudo.com',
-      facebook: 'TODO: URL Page Facebook "USPrécigné Judo"',
+      website: 'https://www.usprecignejudo.com/',
+      facebook: 'https://www.facebook.com/profile.php?id=100057526297878',
       email: 'precignejudo@gmail.com',
       phone: '+33 6 09 33 57 78',
     },
@@ -78,7 +77,6 @@ export const sports: Sport[] = [
       { day: 'Samedi', time: 'École de tennis (enfants) – matin', location: 'Courts de tennis' },
     ],
     contacts: {
-      facebook: 'TODO: URL Page Facebook Tennis',
       email: 'mariviemoreau@orange.fr',
       phone: '+33 6 66 84 52 94',
     },
@@ -107,7 +105,7 @@ export const sports: Sport[] = [
       { day: 'Jeudi', time: '14:30 - 16:00', location: 'Salle des Rivauderies — Précigné' },
     ],
     contacts: {
-      facebook: 'TODO: URL Page Facebook YOGA',
+      facebook: 'https://www.facebook.com/profile.php?id=100083001805365#',
       email: 'omnisportsyogaprecigne@gmail.com',
       phone: '+33 6 87 06 68 78',
     },
