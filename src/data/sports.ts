@@ -49,11 +49,11 @@ export const sports: Sport[] = [
     name: 'Judo',
     logo: '/images/logos/judo-logo.png',
     heroImage: '/images/judo-hero.avif',
-    intro: 'L\'USP judo est un club de sport familial et chaleureux, ouvert pour le loisir comme pour la compétition. Accueil dès 4 ans (entrée en Moyenne Section au 1er septembre). Mathias ETOURMY, professeur diplômé, formé au club, enseigne le judo depuis 2003 et le taïso (renforcement musculaire ouvert à tous, judoka et non-judoka) à partir de 14 ans depuis septembre 2020. Il transmet sa passion pour le judo et l\'arbitrage qu\'il pratique au plus haut niveau national.',
+    intro: 'L\'USP judo est un club de sport familial et chaleureux, ouvert aussi bien pour le loisir que pour ceux qui veulent faire de la compétition.\n\nNous accueillons les enfants dès l\'âge de 4 ans (enfants entrant en Moyenne Section au 1er septembre).\n\nMathias ETOURMY, professeur diplômé, a grandi et s\'est formé au sein du club. Il y enseigne le judo depuis 2003 et le taïso (renforcement musculaire ouvert à tous, judoka et non judoka) à partir de 14 ans) depuis septembre 2020. Il transmet durant ses cours sa passion pour le judo et l\'arbitrage qu\'il pratique au plus haut niveau national.\n\n**2 dojos :** Alain Rougé (salle omnisports) et salle Champagne (Rue des Écoles)\n\nLes lundis et jeudis soirs, pédibus entre la garderie périscolaire et la salle Champagne.\n\n**Club référencé au Handiguide :** inclusion des enfants porteurs d\'une difficulté ou d\'un handicap sur les cours classiques, cours judo adapté / parajudo pour les adultes le mercredi matin.',
     schedule: [
-      { day: 'Lundi', time: 'Soir', location: 'Dojo (Alain Rougé / Champagne)' },
-      { day: 'Mercredi', time: 'Toute la journée', location: 'Dojo (Alain Rougé / Champagne)' },
-      { day: 'Jeudi', time: 'Soir', location: 'Dojo (Alain Rougé / Champagne)' },
+      { day: 'Lundi', time: 'Soir', location: 'Dojo Alain Rougé (salle omnisports) / Salle Champagne (Rue des Écoles)', note: 'Pédibus disponible depuis la garderie périscolaire' },
+      { day: 'Mercredi', time: 'Toute la journée', location: 'Dojo Alain Rougé (salle omnisports) / Salle Champagne (Rue des Écoles)', note: 'Cours judo adapté/parajudo adultes le matin' },
+      { day: 'Jeudi', time: 'Soir', location: 'Dojo Alain Rougé (salle omnisports) / Salle Champagne (Rue des Écoles)', note: 'Pédibus disponible depuis la garderie périscolaire' },
     ],
     contacts: {
       website: 'https://www.usprecignejudo.com/',
