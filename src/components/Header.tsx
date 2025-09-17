@@ -102,6 +102,15 @@ export default function Header() {
             <Link href="/actualites" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Actualités
             </Link>
+            <div className="ml-4 flex items-center">
+              <Image
+                src="/images/logo-ffco.avif"
+                alt="Logo FFCO"
+                width={40}
+                height={28}
+                className="object-contain"
+              />
+            </div>
           </div>
         </div>
       </nav>

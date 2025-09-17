@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
+import Image from 'next/image'
 import Header from '@/components/Header'
 import './globals.css'
 
@@ -69,8 +70,20 @@ export default function RootLayout({
                 </div>
               </div>
             </div>
-            <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-              <p>&copy; 2024 Association Sportive. Tous droits réservés.</p>
+            <div className="border-t border-gray-700 mt-8 pt-8">
+              <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                <p className="text-gray-400">&copy; 2024 Association Sportive. Tous droits réservés.</p>
+                <div className="flex items-center gap-2">
+                  <span className="text-gray-400 text-sm">Partenaire :</span>
+                  <Image
+                    src="/images/logo-ffco.avif"
+                    alt="Logo FFCO"
+                    width={60}
+                    height={40}
+                    className="object-contain"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </footer>
