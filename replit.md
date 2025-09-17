@@ -13,6 +13,7 @@ This is a fully implemented Next.js 14 website for US Précigné (Union Sportive
 - **Tennis Section Integration**: Complete integration with 2 authentic images (hero and content in AVIF format) and 7 official PDF documents (fiche inscription, tarifs, formulaire QP sport, questionnaire santé mineurs, modèles certificat médical et attestations)
 - **Yoga Section Integration**: Updated with authentic cover image (AVIF format) and 3 official PDF documents (bulletin inscription, questionnaire santé, flyer 2025-2026), removed content image as none were provided
 - **Image Optimization**: Hero images for Gym and Judo sections converted to AVIF format for better performance
+- **News System Enhancement**: Enhanced news section with additional image support and modal viewing system for better visual presentation
 
 ## User Preferences
 
