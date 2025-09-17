@@ -6,7 +6,7 @@ export const sports: Sport[] = [
     name: 'Football',
     logo: '/images/logos/football-logo.png',
     heroImage: '/images/football-hero.webp',
-    intro: 'Rejoignez notre équipe de football et développez vos compétences techniques et tactiques dans une ambiance conviviale. Notre club accueille tous les niveaux, des débutants aux joueurs expérimentés.',
+    intro: 'Avec 120 licenciés, le club fêtera ses 100 ans en 2022. Une journée festive est programmée en juillet 2023 (repoussée suite à la pandémie).\n\nLe club est présidé par Eric DUBAS accompagné par 13 membres du bureau dont Stéphane JUBAULT (Secrétaire).\n\n**Les effectifs comprennent :**\n• 45 séniors pour 2 équipes, sous la responsabilité de Matthieu BODIN entraîneur général\n• 40 enfants pour le foot animation (U7, U9 et U11), Manon REGNER en est la responsable, aidée par 2 jeunes filles et 3 joueurs du club pour les entraînements\n\nPour les catégories U13, U15 et U18, le club fait partie d\'un groupement (GJVJSPP). Une vingtaine de joueurs du club font partie de ce groupement.\n\nPour les 3 catégories U15, U17, et U17, le club est au plus haut niveau départemental.\n\n**Activités :**\n• Stage de foot à chaque vacance scolaire (jeux ballons, sorties VTT, questionnaires, dessins)\n• Deux lotos par saison\n• Soirée barbecue à la piscine\n• Tournoi le dimanche de pentecôte (environ 400 jeunes sur nos terrains)\n\n**Projets futurs :**\n• Engager une équipe féminine (foot à 8)\n• Se renseigner pour une nouvelle activité : le foot en marchant',
     contentImage: '/images/football-content.webp',
     schedule: [
       { day: 'Lundi', time: '18h00 - 20h00', location: 'Terrain A', note: 'Entrainement technique' },
