@@ -18,10 +18,7 @@ export const sports: Sport[] = [
       phone: '+33123456789',
       email: 'football@association.fr',
     },
-    pdfs: [
-      { label: 'Fiche d\'inscription Football', file: '/pdfs/inscription-football.pdf' },
-      { label: 'Règlement intérieur', file: '/pdfs/reglement.pdf' },
-    ],
+    pdfs: [],
   },
   {
     slug: 'gym',
