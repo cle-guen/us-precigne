@@ -6,9 +6,9 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Association Sportive - Accueil',
-  description: 'Découvrez nos activités sportives : Football, Gymnastique, Judo, Tennis et Yoga.',
-  keywords: 'sport, association, football, gym, judo, tennis, yoga',
+  title: 'US Précigné - Accueil',
+  description: 'Union Sportive de Précigné - Association omnisports créée en 1921 : Football, Gymnastique, Judo, Tennis et Yoga.',
+  keywords: 'US Précigné, sport, association, football, gym, judo, tennis, yoga, Précigné',
 }
 
 export default function RootLayout({
@@ -23,7 +23,7 @@ export default function RootLayout({
           <nav className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" role="navigation" aria-label="Navigation principale">
             <div className="flex justify-between items-center h-16">
               <Link href="/" className="text-xl font-bold text-blue-600 hover:text-blue-800 transition-colors">
-                Association Sportive
+                US Précigné
               </Link>
               <div className="flex space-x-8">
                 <Link href="/" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
@@ -52,7 +52,7 @@ export default function RootLayout({
               <div>
                 <h3 className="text-lg font-semibold mb-4">Contact</h3>
                 <div className="space-y-2 text-gray-300">
-                  <p>📧 contact@association.fr</p>
+                  <p>📧 usprecigne.omnisports@gmail.com</p>
                   <p>📞 +33 1 23 45 67 89</p>
                   <p>📍 123 Rue du Sport, 75000 Paris</p>
                 </div>
