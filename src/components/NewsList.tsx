@@ -69,11 +69,12 @@ export default function NewsList({ news }: NewsListProps) {
                 <h2 className="text-xl font-semibold text-gray-900 mb-2">
                   {item.title}
                 </h2>
-                <time dateTime={item.date} className="text-sm text-gray-500">
-                  {formatDate(item.date)}
-                </time>
+                {item.date && (
+                  <time dateTime={item.date} className="text-sm text-gray-500">
+                    {formatDate(item.date!)}
+                  </time>
+                )}
               </header>
-              <p className="text-gray-600 mb-4">{item.excerpt}</p>
               {item.body && (
                 <div className="prose prose-sm max-w-none mb-4">
                   <p>{item.body}</p>
@@ -82,9 +83,6 @@ export default function NewsList({ news }: NewsListProps) {
               {/* Images supplémentaires */}
               {item.additionalImages && item.additionalImages.length > 0 && (
                 <div className="mt-4">
-                  <h3 className="text-sm font-medium text-gray-700 mb-3">
-                    Images de l‘actualité
-                  </h3>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
                     {item.additionalImages.map((imageSrc, index) => (
                       <button
