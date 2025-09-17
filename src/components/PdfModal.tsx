@@ -53,6 +53,7 @@ export default function PdfModal({ isOpen, onClose, file, label }: PdfModalProps
               height="100%"
               className="w-full h-full rounded-lg"
               title={`Aperçu de ${label}`}
+              sandbox="allow-same-origin allow-scripts"
               onError={() => {
                 // En cas d'erreur, on affiche le fallback
                 console.warn('Erreur lors du chargement du PDF:', file);
@@ -60,19 +61,22 @@ export default function PdfModal({ isOpen, onClose, file, label }: PdfModalProps
             >
               {/* Fallback content si iframe ne fonctionne pas */}
               <div className="flex flex-col items-center justify-center h-full p-8 text-center">
-                <div className="bg-red-50 border border-red-200 rounded-lg p-6 max-w-md">
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 max-w-md">
                   <svg 
-                    className="w-12 h-12 text-red-600 mx-auto mb-4" 
+                    className="w-12 h-12 text-blue-600 mx-auto mb-4" 
                     fill="none" 
                     stroke="currentColor" 
                     viewBox="0 0 24 24"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
-                  <h3 className="text-lg font-semibold text-red-800 mb-2">
+                  <h3 className="text-lg font-semibold text-blue-800 mb-2">
                     Aperçu PDF
                   </h3>
-                  <p className="text-red-700 mb-4">
+                  <p className="text-blue-700 mb-4">
+                    L'aperçu peut être bloqué par votre navigateur pour des raisons de sécurité.
+                  </p>
+                  <p className="text-blue-700 mb-4">
                     Utilisez le bouton de téléchargement pour ouvrir ce document.
                   </p>
                   <a
