@@ -4,6 +4,14 @@
 
 This is a fully implemented Next.js 14 website for US Précigné (Union Sportive de Précigné), a French sports association founded in 1921. The site showcases 5 sports activities: Football, Gymnastics, Judo, Tennis, and Yoga. The site features a beautiful homepage with the association's real history, sport cards, individual sport pages with detailed information, schedules, contact details, and embedded PDF document viewers. It includes a news section for announcements and events. The application is successfully configured for static export and has been tested to generate all required static files.
 
+## Recent Changes
+
+### September 2025 Updates
+- **Contact Links Updated**: All sports sections now display authentic contact information with real Facebook pages for Football, Judo, and Yoga sections
+- **Gym Section Integration**: Replaced placeholder content with authentic materials including real cover image (AVIF format) and 4 official PDF documents (affiche reprise gym, fiche inscription 2025-2026, questionnaire santé, résumé garanties MAIF)
+- **Judo Section Integration**: Updated with authentic cover image (AVIF format), removed content image and PDFs as none were provided by the association
+- **Image Optimization**: Hero images for Gym and Judo sections converted to AVIF format for better performance
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
