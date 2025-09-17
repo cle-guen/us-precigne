@@ -15,6 +15,7 @@ export interface ScheduleEntry {
 export interface Sport {
   slug: string;
   name: string;
+  logo?: string;
   heroImage: string;
   intro: string;
   contentImage?: string;

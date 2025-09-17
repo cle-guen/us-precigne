@@ -4,6 +4,7 @@ export const sports: Sport[] = [
   {
     slug: 'football',
     name: 'Football',
+    logo: '/images/logos/football-logo.webp',
     heroImage: '/images/football-hero.jpg',
     intro: 'Rejoignez notre équipe de football et développez vos compétences techniques et tactiques dans une ambiance conviviale. Notre club accueille tous les niveaux, des débutants aux joueurs expérimentés.',
     contentImage: '/images/football-2.jpg',
@@ -25,6 +26,7 @@ export const sports: Sport[] = [
   {
     slug: 'gym',
     name: 'Gymnastique',
+    logo: '/images/logos/gym-logo.webp',
     heroImage: '/images/gym-hero.jpg',
     intro: 'La section gym a plus de 40 ans (création fin 1977) et c\'est à la salle des fêtes que se déroulaient les premières séances. La section est présidée par Nicole LANGLAIS. Depuis, la section a continué de se structurer et s\'est affiliée à la FFEPGV (Fédération Française d\'Éducation Physique et de Gymnastique Volontaire). Elle compte aujourd\'hui 38 inscrits. L\'objectif est de proposer une activité physique et sportive de loisirs et de bien-être pour tous.',
     contentImage: '/images/gym-2.jpg',
@@ -47,6 +49,7 @@ export const sports: Sport[] = [
   {
     slug: 'judo',
     name: 'US Précigné Judo',
+    logo: '/images/logos/judo-logo.webp',
     heroImage: '/images/judo-hero.jpg',
     intro: 'L\'USP judo est un club de sport familial et chaleureux, ouvert pour le loisir comme pour la compétition. Accueil dès 4 ans (entrée en Moyenne Section au 1er septembre). Mathias ETOURMY, professeur diplômé, formé au club, enseigne le judo depuis 2003 et le taïso (renforcement musculaire ouvert à tous, judoka et non-judoka) à partir de 14 ans depuis septembre 2020. Il transmet sa passion pour le judo et l\'arbitrage qu\'il pratique au plus haut niveau national.',
     contentImage: '/images/judo-2.jpg',
@@ -66,6 +69,7 @@ export const sports: Sport[] = [
   {
     slug: 'tennis',
     name: 'Tennis',
+    logo: '/images/logos/tennis-logo.webp',
     heroImage: '/images/tennis-hero.jpg',
     intro: 'La section tennis créée au milieu des années 70 est affiliée à la FFT et propose découverte et pratique du tennis en loisir et en compétition, via différentes activités : école de tennis (4 à 18 ans) : initiation et perfectionnement ; cours adultes : initiation et perfectionnement ; découverte de la compétition jeunes et femmes débutantes (compétition libre, raquettes FFT) ; organisation de compétitions (tournois open et interne) ; participations aux championnats.',
     contentImage: '/images/tennis-2.jpg',
@@ -91,6 +95,7 @@ export const sports: Sport[] = [
   {
     slug: 'yoga',
     name: 'Yoga',
+    logo: '/images/logos/yoga-logo.webp',
     heroImage: '/images/yoga-hero.jpg',
     intro: 'Section créée en 2016 avec une soixantaine d\'adhérents adultes. Présidente : Nelly CHOQUET. Secrétariat : Sylvie BOURREAU. Trésorerie : Murielle REGNER. Cours assurés par Anna GEOFFROY (saison 2024/2025), enseignante diplômée de Yoga Alliance International, formée en Hatha et Vinyasa Yoga ainsi qu\'en Yoga Thérapie (méthode Green Yoga). Yoga adapté à tous les niveaux (débutants à expérimentés) avec séance incluant une méditation guidée. 1ère séance d\'essai gratuite.',
     contentImage: '/images/yoga-2.jpg',

@@ -18,9 +18,33 @@ export default function SportCard({ sport }: SportCardProps) {
             className="object-cover group-hover:scale-105 transition-transform duration-300"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
+          {sport.logo && (
+            <div className="absolute top-3 right-3 w-12 h-12 bg-white rounded-full shadow-lg p-2 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <Image
+                src={sport.logo}
+                alt={`Logo ${sport.name}`}
+                width={32}
+                height={32}
+                className="object-contain"
+              />
+            </div>
+          )}
         </div>
         <div className="p-6">
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">{sport.name}</h3>
+          <div className="flex items-center gap-3 mb-2">
+            {sport.logo && (
+              <div className="w-8 h-8 rounded-full bg-gray-50 p-1 flex items-center justify-center flex-shrink-0">
+                <Image
+                  src={sport.logo}
+                  alt={`Logo ${sport.name}`}
+                  width={24}
+                  height={24}
+                  className="object-contain"
+                />
+              </div>
+            )}
+            <h3 className="text-xl font-semibold text-gray-900">{sport.name}</h3>
+          </div>
           <p className="text-gray-600 text-sm line-clamp-3">{sport.intro}</p>
           <div className="mt-4">
             <span className="inline-flex items-center text-blue-600 text-sm font-medium group-hover:text-blue-800">

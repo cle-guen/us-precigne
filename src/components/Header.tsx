@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { sports } from '../data/sports'
 
 export default function Header() {
@@ -76,10 +77,21 @@ export default function Header() {
                       <Link
                         key={sport.slug}
                         href={`/sports/${sport.slug}`}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                        className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
                         role="menuitem"
                         onClick={() => setIsDropdownOpen(false)}
                       >
+                        {sport.logo && (
+                          <div className="w-6 h-6 rounded-full bg-gray-100 p-1 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-100 transition-colors">
+                            <Image
+                              src={sport.logo}
+                              alt={`Logo ${sport.name}`}
+                              width={16}
+                              height={16}
+                              className="object-contain"
+                            />
+                          </div>
+                        )}
                         {sport.name}
                       </Link>
                     ))}
