@@ -81,13 +81,20 @@ export default function RootLayout({
                 <p className="text-gray-400">&copy; 2024 Association Sportive. Tous droits réservés.</p>
                 <div className="flex items-center gap-2">
                   <span className="text-gray-400 text-sm">Partenaire :</span>
-                  <Image
-                    src="/images/logo-ffco.avif"
-                    alt="Logo FFCO"
-                    width={60}
-                    height={40}
-                    className="object-contain"
-                  />
+                  <a
+                    href="https://www.ffco.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:opacity-80 transition-opacity"
+                  >
+                    <Image
+                      src="/images/logo-ffco-new.png"
+                      alt="Logo FFCO"
+                      width={60}
+                      height={40}
+                      className="object-contain"
+                    />
+                  </a>
                 </div>
               </div>
             </div>

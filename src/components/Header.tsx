@@ -117,26 +117,40 @@ export default function Header() {
               Actualités
             </Link>
             <div className="flex items-center">
-              <Image
-                src="/images/logo-ffco.avif"
-                alt="Logo FFCO"
-                width={40}
-                height={28}
-                className="object-contain"
-              />
+              <a
+                href="https://www.ffco.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <Image
+                  src="/images/logo-ffco-new.png"
+                  alt="Logo FFCO"
+                  width={40}
+                  height={28}
+                  className="object-contain"
+                />
+              </a>
             </div>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
             <div className="flex items-center">
-              <Image
-                src="/images/logo-ffco.avif"
-                alt="Logo FFCO"
-                width={32}
-                height={22}
-                className="object-contain"
-              />
+              <a
+                href="https://www.ffco.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-80 transition-opacity"
+              >
+                <Image
+                  src="/images/logo-ffco-new.png"
+                  alt="Logo FFCO"
+                  width={32}
+                  height={22}
+                  className="object-contain"
+                />
+              </a>
             </div>
             <button
               className="text-gray-700 hover:text-red-700 focus:outline-none focus:text-red-700 transition-colors"
