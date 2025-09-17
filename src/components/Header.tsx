@@ -43,7 +43,7 @@ export default function Header() {
           <Link href="/" className="text-xl font-bold text-blue-600 hover:text-blue-800 transition-colors">
             US Précigné
           </Link>
-          <div className="flex space-x-8">
+          <div className="flex items-center justify-center space-x-6">
             <Link href="/" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Accueil
             </Link>
@@ -102,7 +102,7 @@ export default function Header() {
             <Link href="/actualites" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
               Actualités
             </Link>
-            <div className="ml-4 flex items-center">
+            <div className="flex items-center">
               <Image
                 src="/images/logo-ffco.avif"
                 alt="Logo FFCO"
