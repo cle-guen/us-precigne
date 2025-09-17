@@ -41,8 +41,19 @@ export default function Header() {
     <header className="bg-white shadow-sm border-b border-gray-200">
       <nav className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" role="navigation" aria-label="Navigation principale">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="text-xl font-bold text-blue-600 hover:text-blue-800 transition-colors">
-            US Précigné
+          <Link href="/" className="flex items-center gap-3 text-xl font-bold text-blue-600 hover:text-blue-800 transition-colors">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center flex-shrink-0">
+              <Image
+                src="/images/logo-us-precigne.png"
+                alt="Logo US Précigné"
+                width={40}
+                height={40}
+                className="object-contain"
+                style={{ width: "auto", height: "auto" }}
+              />
+            </div>
+            <span className="hidden sm:inline">US Précigné</span>
+            <span className="sm:hidden">USP</span>
           </Link>
           
           {/* Desktop Navigation */}
