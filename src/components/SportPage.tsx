@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { Sport } from '@/lib/types';
 import ScheduleTable from './ScheduleTable';
-import PdfViewer from './PdfViewer';
+import PdfSelector from './PdfSelector';
 
 interface SportPageProps {
   sport: Sport;
@@ -118,11 +118,7 @@ export default function SportPage({ sport }: SportPageProps) {
         {sport.pdfs && sport.pdfs.length > 0 && (
           <section>
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Documents</h2>
-            <div className="space-y-6">
-              {sport.pdfs.map((pdf, index) => (
-                <PdfViewer key={index} file={pdf.file} label={pdf.label} />
-              ))}
-            </div>
+            <PdfSelector pdfs={sport.pdfs} />
           </section>
         )}
       </div>
