@@ -153,7 +153,7 @@ export default function SportPage({ sport }: SportPageProps) {
                   className="flex items-center p-3 bg-white rounded-lg hover:bg-gray-100 transition-colors"
                 >
                   <svg
-                    className="w-5 h-5 text-gray-900 mr-3"
+                    className="w-5 min-w-5 h-5 min-h-5 text-gray-900 mr-3"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -165,7 +165,7 @@ export default function SportPage({ sport }: SportPageProps) {
                       d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     />
                   </svg>
-                  <span className="text-sm font-medium">
+                  <span className="text-xs font-medium">
                     {sport.contacts.email}
                   </span>
                 </a>
