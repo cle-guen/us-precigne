@@ -80,7 +80,7 @@ export const sports: Sport[] = [
     },
     pdfs: [
       { label: 'Fiche inscription 2025-2026', file: '/pdfs/tennis_fiche_inscription_2025_2026.pdf' },
-      { label: 'Tarifs 2025-2026', file: '/pdfs/tennis_tarifs_2025_2026.pdf' },
+      { label: 'Tarifs 2021-2022', file: '/pdfs/tennis_tarifs_2025_2026.pdf' },
       { label: 'Formulaire QP sport majeurs', file: '/pdfs/tennis_formulaire_qp_sport_majeurs.pdf' },
       { label: 'Questionnaire santé mineurs', file: '/pdfs/tennis_questionnaire_sante_mineurs.pdf' },
       { label: 'Modèle certificat médical', file: '/pdfs/tennis_modele_certificat_medical.pdf' },
