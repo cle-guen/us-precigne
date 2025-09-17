@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
+import Header from '@/components/Header'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -19,28 +20,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={inter.className}>
-        <header className="bg-white shadow-sm border-b border-gray-200">
-          <nav className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" role="navigation" aria-label="Navigation principale">
-            <div className="flex justify-between items-center h-16">
-              <Link href="/" className="text-xl font-bold text-blue-600 hover:text-blue-800 transition-colors">
-                US Précigné
-              </Link>
-              <div className="flex space-x-8">
-                <Link href="/" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
-                  Accueil
-                </Link>
-                <div className="relative group">
-                  <button className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
-                    Sports
-                  </button>
-                </div>
-                <Link href="/actualites" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
-                  Actualités
-                </Link>
-              </div>
-            </div>
-          </nav>
-        </header>
+        <Header />
 
         <main role="main">
           {children}
