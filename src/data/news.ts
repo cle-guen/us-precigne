@@ -16,6 +16,7 @@ export const news: NewsItem[] = [
     excerpt: 'Les mercredis 22 et 29 juin : Portes ouvertes Tennis, de 14h à 18h.',
     body: 'Les mercredis 22 et 29 juin : Portes ouvertes Tennis, de 14h à 18h sur les terrains extérieurs de Précigné.',
     image: '/images/news/tennis-portes-ouvertes.jpg',
+    additionalImages: ['/images/news/flyer-portes-ouvertes-2022.avif'],
   },
   {
     id: 'yoga-portes-ouvertes',
@@ -24,6 +25,7 @@ export const news: NewsItem[] = [
     excerpt: 'Le Yoga ouvre ses portes le lundi 20 juin.',
     body: 'Le Yoga ouvre ses portes le lundi 20 juin aux heures habituelles des cours de 18h30 et 20h30. Participation libre pour les intéressés.',
     image: '/images/news/yoga-portes-ouvertes.jpg',
+    additionalImages: ['/images/news/affiche-portes-ouvertes-yoga.avif'],
   },
   {
     id: 'yoga-initiation-ecole',
@@ -40,6 +42,7 @@ export const news: NewsItem[] = [
     excerpt: 'Le Judo propose des portes ouvertes les mercredis en juin.',
     body: 'Le Judo propose aussi des portes ouvertes les mercredis 8, 15, 22 et 29 juin. Venez nombreux !',
     image: '/images/news/judo-portes-ouvertes.jpg',
+    additionalImages: ['/images/news/affiche-portes-ouvertes-judo.avif'],
   },
   {
     id: 'foot-tournoi-jeunes',
@@ -48,6 +51,7 @@ export const news: NewsItem[] = [
     excerpt: 'Le 5 juin, tournoi des jeunes à Précigné (catégories U7 à U18).',
     body: 'Le 5 juin, tournoi des jeunes à Précigné (catégories U7 à U18). Venez encourager nos jeunes !',
     image: '/images/news/foot-tournoi-jeunes.jpg',
+    additionalImages: ['/images/news/tournoi-precigne.avif'],
   },
   {
     id: 'tennis-open',
