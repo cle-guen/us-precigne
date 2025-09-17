@@ -10,6 +10,8 @@ This is a fully implemented Next.js 14 website for US Précigné (Union Sportive
 - **Contact Links Updated**: All sports sections now display authentic contact information with real Facebook pages for Football, Judo, and Yoga sections
 - **Gym Section Integration**: Replaced placeholder content with authentic materials including real cover image (AVIF format) and 4 official PDF documents (affiche reprise gym, fiche inscription 2025-2026, questionnaire santé, résumé garanties MAIF)
 - **Judo Section Integration**: Updated with authentic cover image (AVIF format), removed content image and PDFs as none were provided by the association
+- **Tennis Section Integration**: Complete integration with 2 authentic images (hero and content in AVIF format) and 7 official PDF documents (fiche inscription, tarifs, formulaire QP sport, questionnaire santé mineurs, modèles certificat médical et attestations)
+- **Yoga Section Integration**: Updated with authentic cover image (AVIF format) and 3 official PDF documents (bulletin inscription, questionnaire santé, flyer 2025-2026), removed content image as none were provided
 - **Image Optimization**: Hero images for Gym and Judo sections converted to AVIF format for better performance
 
 ## User Preferences
