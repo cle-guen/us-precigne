@@ -5,9 +5,9 @@ export const sports: Sport[] = [
     slug: 'football',
     name: 'Football',
     logo: '/images/logos/football-logo.webp',
-    heroImage: '/images/football-hero.jpg',
+    heroImage: '/images/football-hero.webp',
     intro: 'Rejoignez notre équipe de football et développez vos compétences techniques et tactiques dans une ambiance conviviale. Notre club accueille tous les niveaux, des débutants aux joueurs expérimentés.',
-    contentImage: '/images/football-2.jpg',
+    contentImage: '/images/football-content.webp',
     schedule: [
       { day: 'Lundi', time: '18h00 - 20h00', location: 'Terrain A', note: 'Entrainement technique' },
       { day: 'Mercredi', time: '19h30 - 21h30', location: 'Terrain A', note: 'Entrainement physique' },
