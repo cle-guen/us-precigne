@@ -67,6 +67,7 @@ export const news: NewsItem[] = [
     date: '2025-05-05',
     excerpt: 'Les 5 et 6 mai, journées découvertes Yoga pour les enfants de l\'école privée.',
     body: 'Le 5 et 6 mai, journées découvertes Yoga pour les enfants de l\'école privée St Jean St Joseph.',
+    additionalImages: ['/images/news/yoga-prive-1.avif', '/images/news/yoga-prive-3.avif'],
     sportSlug: 'yoga',
   },
   {
