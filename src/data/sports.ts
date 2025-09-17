@@ -27,9 +27,8 @@ export const sports: Sport[] = [
     slug: 'gym',
     name: 'Gymnastique',
     logo: '/images/logos/gym-logo.webp',
-    heroImage: '/images/gym-hero.jpg',
+    heroImage: '/images/gym-hero.avif',
     intro: 'La section gym a plus de 40 ans (création fin 1977) et c\'est à la salle des fêtes que se déroulaient les premières séances. La section est présidée par Nicole LANGLAIS. Depuis, la section a continué de se structurer et s\'est affiliée à la FFEPGV (Fédération Française d\'Éducation Physique et de Gymnastique Volontaire). Elle compte aujourd\'hui 38 inscrits. L\'objectif est de proposer une activité physique et sportive de loisirs et de bien-être pour tous.',
-    contentImage: '/images/gym-2.jpg',
     schedule: [
       { day: 'Jeudi', time: '19:00 - 20:00', location: 'Salle omnisports' },
       { day: 'Jeudi', time: '20:00 - 21:00', location: 'Salle omnisports' },
