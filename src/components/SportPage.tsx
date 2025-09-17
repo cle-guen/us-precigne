@@ -18,7 +18,7 @@ export default function SportPage({ sport }: SportPageProps) {
             src={sport.heroImage}
             alt={`Image hero de ${sport.name}`}
             fill
-            className="object-cover"
+            className={`object-cover ${sport.slug === 'gym' ? 'object-top' : 'object-center'}`}
             priority
             sizes="100vw"
           />
