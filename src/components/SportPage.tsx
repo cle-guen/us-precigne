@@ -12,7 +12,7 @@ export default function SportPage({ sport }: SportPageProps) {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-[40vh] max-h-[60vh] flex items-center justify-center">
+      <section className="relative min-h-[40vh] max-h-[60vh] flex items-center justify-center max-w-7xl mx-auto overflow-hidden rounded-lg">
         <div className="absolute inset-0">
           <Image
             src={sport.heroImage}
