@@ -80,24 +80,24 @@ export default function HomePage() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
             <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-red-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Président</h3>
-              <p className="text-lg font-semibold text-red-700 mb-1">Thierry COQUEREAU</p>
+              <p className="text-lg font-semibold text-gray-700 mb-1">Thierry COQUEREAU</p>
               <p className="text-sm text-gray-600">Membre de la section tennis</p>
             </div>
             
             <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 text-center">
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-red-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Trésorière</h3>
-              <p className="text-lg font-semibold text-red-700 mb-1">Marivie MOREAU</p>
+              <p className="text-lg font-semibold text-gray-700 mb-1">Marivie MOREAU</p>
               <p className="text-sm text-gray-600">Présidente de la section tennis et trésorière de la section gymnastique</p>
             </div>
             

@@ -42,12 +42,12 @@ export default function Header() {
       <nav className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" role="navigation" aria-label="Navigation principale">
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center gap-3 text-xl font-bold text-red-700 hover:text-red-800 transition-colors">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center flex-shrink-0">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center flex-shrink-0">
               <Image
                 src="/images/logo-us-precigne.png"
                 alt="Logo US Précigné"
-                width={40}
-                height={40}
+                width={32}
+                height={32}
                 className="object-contain"
                 style={{ width: "auto", height: "auto" }}
               />
