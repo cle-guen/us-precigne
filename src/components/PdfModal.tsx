@@ -19,11 +19,22 @@ export default function PdfModal({ isOpen, onClose, file, label }: PdfModalProps
           <h2 id="modal-title" className="text-xl font-semibold text-gray-900 pr-8">
             {label}
           </h2>
-          <div className="mt-3">
+          <div className="mt-3 flex flex-wrap gap-2">
+            <a
+              href={file}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            >
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+              Ouvrir dans un nouvel onglet
+            </a>
             <a
               href={file}
               download
-              className="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="inline-flex items-center px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
             >
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -36,59 +47,86 @@ export default function PdfModal({ isOpen, onClose, file, label }: PdfModalProps
         {/* PDF Content */}
         <div className="flex-1 min-h-0">
           <div className="h-full bg-gray-50 rounded-lg border border-gray-200">
-            <object
-              data={file}
-              type="application/pdf"
+            <iframe
+              src={`${file}#toolbar=1&navpanes=1&scrollbar=1&view=FitH`}
               width="100%"
               height="100%"
               className="w-full h-full rounded-lg"
-              aria-label={`Aperçu de ${label}`}
+              title={`Aperçu de ${label}`}
+              onError={() => {
+                // En cas d'erreur, on affiche le fallback
+                console.warn('Erreur lors du chargement du PDF:', file);
+              }}
             >
-              {/* Fallback content */}
+              {/* Fallback content si iframe ne fonctionne pas */}
               <div className="flex flex-col items-center justify-center h-full p-8 text-center">
-                <div className="bg-red-50 border border-red-200 rounded-lg p-6 max-w-md">
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 max-w-md">
                   <svg 
-                    className="w-12 h-12 text-red-400 mx-auto mb-4" 
+                    className="w-12 h-12 text-blue-500 mx-auto mb-4" 
                     fill="none" 
                     stroke="currentColor" 
                     viewBox="0 0 24 24"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.081 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
-                  <h3 className="text-lg font-semibold text-red-800 mb-2">
-                    PDF non disponible
+                  <h3 className="text-lg font-semibold text-blue-800 mb-2">
+                    Aperçu PDF
                   </h3>
-                  <p className="text-red-700 mb-4">
-                    Votre navigateur ne peut pas afficher ce PDF directement.
+                  <p className="text-blue-700 mb-4">
+                    Utilisez le bouton de téléchargement pour ouvrir ce document.
                   </p>
                   <a
                     href={file}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 mr-2"
+                  >
+                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    Ouvrir dans un nouvel onglet
+                  </a>
+                  <a
+                    href={file}
                     download
-                    className="inline-flex items-center px-4 py-2 bg-red-600 text-white text-sm font-medium rounded-md hover:bg-red-700 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                    className="inline-flex items-center px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
                   >
                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
-                    Télécharger le PDF
+                    Télécharger
                   </a>
                 </div>
               </div>
-            </object>
+            </iframe>
           </div>
         </div>
 
-        {/* Footer - mobile download button */}
+        {/* Footer - mobile buttons */}
         <div className="flex-shrink-0 pt-4 mt-4 border-t border-gray-200 sm:hidden">
-          <a
-            href={file}
-            download
-            className="w-full inline-flex justify-center items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-          >
-            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            Télécharger le PDF
-          </a>
+          <div className="flex flex-col gap-2">
+            <a
+              href={file}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full inline-flex justify-center items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            >
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+              Ouvrir dans un nouvel onglet
+            </a>
+            <a
+              href={file}
+              download
+              className="w-full inline-flex justify-center items-center px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+            >
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Télécharger le PDF
+            </a>
+          </div>
         </div>
       </div>
     </Modal>
