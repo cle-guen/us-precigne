@@ -85,7 +85,7 @@ export default function SportPage({ sport }: SportPageProps) {
         {/* Content Image */}
         {sport.contentImage && (
           <section className="mb-12">
-            <div className="relative h-48 sm:h-64 md:h-80 w-full rounded-lg overflow-hidden">
+            <div className="relative h-48 sm:h-64 md:h-80 w-full max-w-4xl mx-auto rounded-lg overflow-hidden">
               <Image
                 src={sport.contentImage}
                 alt={`Image illustrant le ${sport.name}`}
