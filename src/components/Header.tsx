@@ -41,7 +41,7 @@ export default function Header() {
     <header className="bg-white shadow-sm border-b border-gray-200">
       <nav className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8" role="navigation" aria-label="Navigation principale">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center gap-3 text-xl font-bold text-blue-600 hover:text-blue-800 transition-colors">
+          <Link href="/" className="flex items-center gap-3 text-xl font-bold text-red-700 hover:text-red-800 transition-colors">
             <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center flex-shrink-0">
               <Image
                 src="/images/logo-us-precigne.png"
@@ -58,12 +58,12 @@ export default function Header() {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center justify-center space-x-6">
-            <Link href="/" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+            <Link href="/" className="text-gray-700 hover:text-red-700 transition-colors font-medium">
               Accueil
             </Link>
             <div className="relative" ref={dropdownRef}>
               <button 
-                className="text-gray-700 hover:text-blue-600 transition-colors font-medium flex items-center gap-1"
+                className="text-gray-700 hover:text-red-700 transition-colors font-medium flex items-center gap-1"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 onMouseEnter={() => setIsDropdownOpen(true)}
                 aria-expanded={isDropdownOpen}
@@ -91,7 +91,7 @@ export default function Header() {
                       <Link
                         key={sport.slug}
                         href={`/sports/${sport.slug}`}
-                        className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                        className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700 transition-colors"
                         role="menuitem"
                         onClick={() => setIsDropdownOpen(false)}
                       >
@@ -113,7 +113,7 @@ export default function Header() {
                 </div>
               )}
             </div>
-            <Link href="/actualites" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+            <Link href="/actualites" className="text-gray-700 hover:text-red-700 transition-colors font-medium">
               Actualités
             </Link>
             <div className="flex items-center">
@@ -139,7 +139,7 @@ export default function Header() {
               />
             </div>
             <button
-              className="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600 transition-colors"
+              className="text-gray-700 hover:text-red-700 focus:outline-none focus:text-red-700 transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-expanded={isMobileMenuOpen}
               aria-label="Menu de navigation"
@@ -161,7 +161,7 @@ export default function Header() {
             <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-50 border-t border-gray-200">
               <Link
                 href="/"
-                className="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium transition-colors"
+                className="block px-3 py-2 text-gray-700 hover:text-red-700 hover:bg-red-50 rounded-md font-medium transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Accueil
@@ -175,7 +175,7 @@ export default function Header() {
                     <Link
                       key={sport.slug}
                       href={`/sports/${sport.slug}`}
-                      className="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md transition-colors"
+                      className="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 hover:text-red-700 hover:bg-red-50 rounded-md transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {sport.logo && (
@@ -197,7 +197,7 @@ export default function Header() {
               
               <Link
                 href="/actualites"
-                className="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-md font-medium transition-colors"
+                className="block px-3 py-2 text-gray-700 hover:text-red-700 hover:bg-red-50 rounded-md font-medium transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Actualités

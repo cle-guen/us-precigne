@@ -47,7 +47,7 @@ export default function SportCard({ sport }: SportCardProps) {
           </div>
           <p className="text-gray-600 text-sm line-clamp-3">{sport.intro}</p>
           <div className="mt-4">
-            <span className="inline-flex items-center text-blue-600 text-sm font-medium group-hover:text-blue-800">
+            <span className="inline-flex items-center text-red-700 text-sm font-medium group-hover:text-red-800">
               Découvrir
               <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

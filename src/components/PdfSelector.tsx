@@ -34,7 +34,7 @@ export default function PdfSelector({ pdfs }: PdfSelectorProps) {
           <button
             key={index}
             onClick={() => openPdf(pdf)}
-            className="group relative p-4 sm:p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md hover:border-blue-300 transition-all duration-200 text-left focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="group relative p-4 sm:p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md hover:border-red-300 transition-all duration-200 text-left focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
             aria-label={`Ouvrir ${pdf.label}`}
           >
             {/* PDF Icon */}
@@ -53,7 +53,7 @@ export default function PdfSelector({ pdfs }: PdfSelectorProps) {
               {/* Hover indicator */}
               <div className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity">
                 <svg 
-                  className="w-5 h-5 text-blue-500" 
+                  className="w-5 h-5 text-red-600" 
                   fill="none" 
                   stroke="currentColor" 
                   viewBox="0 0 24 24"
@@ -69,17 +69,17 @@ export default function PdfSelector({ pdfs }: PdfSelectorProps) {
             </div>
             
             {/* PDF Title */}
-            <h3 className="text-sm font-medium text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2">
+            <h3 className="text-sm font-medium text-gray-900 group-hover:text-red-700 transition-colors line-clamp-2">
               {pdf.label}
             </h3>
             
             {/* Action hint */}
-            <p className="mt-2 text-xs text-gray-500 group-hover:text-blue-500 transition-colors">
+            <p className="mt-2 text-xs text-gray-500 group-hover:text-red-600 transition-colors">
               Cliquer pour ouvrir
             </p>
 
             {/* Visual indicator on hover */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-blue-100 opacity-0 group-hover:opacity-20 rounded-lg transition-opacity pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-r from-red-50 to-red-100 opacity-0 group-hover:opacity-20 rounded-lg transition-opacity pointer-events-none" />
           </button>
         ))}
       </div>
