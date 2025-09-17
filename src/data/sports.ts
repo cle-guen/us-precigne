@@ -68,11 +68,12 @@ export const sports: Sport[] = [
     name: 'Tennis',
     logo: '/images/logos/tennis-logo.png',
     heroImage: '/images/tennis-hero.avif',
-    intro: 'La section tennis créée au milieu des années 70 est affiliée à la FFT et propose découverte et pratique du tennis en loisir et en compétition, via différentes activités : école de tennis (4 à 18 ans) : initiation et perfectionnement ; cours adultes : initiation et perfectionnement ; découverte de la compétition jeunes et femmes débutantes (compétition libre, raquettes FFT) ; organisation de compétitions (tournois open et interne) ; participations aux championnats.',
+    intro: 'La section tennis créée au milieu des années 70 est affiliée à la fédération française de tennis (FFT) et propose la découverte et la pratique du tennis et activités annexes, en loisirs et en compétition, au travers de ses différentes activités :\n\n• École de tennis (jeunes de 4 à 18 ans) : initiation et perfectionnement\n• Cours adultes : initiation et perfectionnement\n• Découverte de la compétition jeunes et femmes débutantes (compétition libre, raquettes FFT)\n• Organisation de compétitions (tournois open et interne)\n• Participations aux championnats départementaux jeunes, seniors (masculin et féminin) et seniors+ 35 ans féminin\n• Animations diverses, portes ouvertes\n\nLa section compte cette saison 87 licenciés et dispose de 2 courts extérieurs et d\'un court couvert à la salle omnisports et est présidée par Marivie Moreau.\n\n40 enfants sont inscrits à l\'école de tennis (mercredi et samedi matin).\n\n4 équipes seniors sont engagées en championnat (2 équipes hommes et 2 équipes femmes).',
     contentImage: '/images/tennis-content.avif',
     schedule: [
-      { day: 'Mercredi', time: 'École de tennis (enfants) – matin', location: 'Courts de tennis' },
-      { day: 'Samedi', time: 'École de tennis (enfants) – matin', location: 'Courts de tennis' },
+      { day: 'Mercredi', time: '9h00 - 12h00', location: 'Courts extérieurs + court couvert', note: 'École de tennis (4-18 ans) - 40 enfants inscrits' },
+      { day: 'Samedi', time: '9h00 - 12h00', location: 'Courts extérieurs + court couvert', note: 'École de tennis (4-18 ans)' },
+      { day: 'Semaine', time: 'Horaires variables', location: 'Courts extérieurs + court couvert', note: 'Cours adultes & entraînements équipes' },
     ],
     contacts: {
       email: 'mariviemoreau@orange.fr',
