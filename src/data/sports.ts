@@ -48,7 +48,7 @@ export const sports: Sport[] = [
   },
   {
     slug: 'judo',
-    name: 'US Précigné Judo',
+    name: 'Judo',
     logo: '/images/logos/judo-logo.webp',
     heroImage: '/images/judo-hero.jpg',
     intro: 'L\'USP judo est un club de sport familial et chaleureux, ouvert pour le loisir comme pour la compétition. Accueil dès 4 ans (entrée en Moyenne Section au 1er septembre). Mathias ETOURMY, professeur diplômé, formé au club, enseigne le judo depuis 2003 et le taïso (renforcement musculaire ouvert à tous, judoka et non-judoka) à partir de 14 ans depuis septembre 2020. Il transmet sa passion pour le judo et l\'arbitrage qu\'il pratique au plus haut niveau national.',
