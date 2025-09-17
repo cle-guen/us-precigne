@@ -28,10 +28,11 @@ export const sports: Sport[] = [
     name: 'Gymnastique',
     logo: '/images/logos/gym-logo.png',
     heroImage: '/images/gym-hero.avif',
-    intro: 'La section gym a plus de 40 ans (création fin 1977) et c\'est à la salle des fêtes que se déroulaient les premières séances. La section est présidée par Nicole LANGLAIS. Depuis, la section a continué de se structurer et s\'est affiliée à la FFEPGV (Fédération Française d\'Éducation Physique et de Gymnastique Volontaire). Elle compte aujourd\'hui 38 inscrits. L\'objectif est de proposer une activité physique et sportive de loisirs et de bien-être pour tous.',
+    intro: 'La section gym a plus de 40 ans (création fin 1977) et c\'est à la salle des fêtes que se déroulaient les premières séances. La Section est présidée par Nicole LANGLAIS.\n\nDepuis, la section a continué de se structurer et s\'est affiliée à la fédération française d\'éducation physique et de gymnastique volontaire (FFEPGV).\n\nElle compte aujourd\'hui 38 inscrits.\n\nL\'objectif de la section est de proposer une activité physique et sportive de loisirs et de bien-être permettant d\'améliorer sa condition physique tout en se faisant plaisir pour toute personne âgée de 15 ans et plus.\n\n**Activités principales :** step, cardio, abdos, stretching, pilates, HIIT (entraînement fractionné haute intensité) et aussi en juin l\'aquagym ou la randonnée.\n\nLes séances ont lieu le jeudi de 19h00 à 20h00 ou de 20h00 à 21h00 à la salle omnisports et sont encadrées par un animateur diplômé.',
     schedule: [
-      { day: 'Jeudi', time: '19:00 - 20:00', location: 'Salle omnisports' },
-      { day: 'Jeudi', time: '20:00 - 21:00', location: 'Salle omnisports' },
+      { day: 'Jeudi', time: '19:00 - 20:00', location: 'Salle omnisports', note: 'Encadrement par animateur diplômé - 38 inscrits' },
+      { day: 'Jeudi', time: '20:00 - 21:00', location: 'Salle omnisports', note: 'Encadrement par animateur diplômé' },
+      { day: 'Juin', time: 'Horaires variables', location: 'Extérieur/Piscine', note: 'Aquagym ou randonnée (activités spéciales)' },
     ],
     contacts: {
       email: 'nicetjolanglais@orange.fr',
