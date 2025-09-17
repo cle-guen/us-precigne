@@ -24,10 +24,10 @@ export default function SportPage({ sport }: SportPageProps) {
           />
           <div className="absolute inset-0 bg-black bg-opacity-40"></div>
         </div>
-        <div className="relative z-10 text-center text-white">
+        <div className="relative z-10 text-center text-white px-4">
           {sport.logo && (
             <div className="mb-4 flex justify-center">
-              <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center hover:scale-105 transition-transform duration-300">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center hover:scale-105 transition-transform duration-300">
                 <Image
                   src={sport.logo}
                   alt={`Logo ${sport.name}`}
@@ -38,14 +38,14 @@ export default function SportPage({ sport }: SportPageProps) {
               </div>
             </div>
           )}
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">{sport.name}</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">{sport.name}</h1>
         </div>
       </section>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Introduction */}
         <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Présentation</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Présentation</h2>
           <div className="text-lg text-gray-700 leading-relaxed space-y-4">
             {sport.intro.split('\n\n').map((paragraph, index) => {
               // Detect patterns like **Title:** and convert to styled headings
@@ -85,13 +85,13 @@ export default function SportPage({ sport }: SportPageProps) {
         {/* Content Image */}
         {sport.contentImage && (
           <section className="mb-12">
-            <div className="relative h-64 md:h-80 w-full rounded-lg overflow-hidden">
+            <div className="relative h-48 sm:h-64 md:h-80 w-full rounded-lg overflow-hidden">
               <Image
                 src={sport.contentImage}
                 alt={`Image illustrant le ${sport.name}`}
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
               />
             </div>
           </section>
@@ -99,15 +99,15 @@ export default function SportPage({ sport }: SportPageProps) {
 
         {/* Schedule */}
         <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Horaires</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Horaires</h2>
           <ScheduleTable schedule={sport.schedule} sportName={sport.name} />
         </section>
 
         {/* Contacts */}
         <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Contacts</h2>
-          <div className="bg-gray-50 rounded-lg p-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Contacts</h2>
+          <div className="bg-gray-50 rounded-lg p-4 sm:p-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {sport.contacts.phone && (
                 <a
                   href={`tel:${sport.contacts.phone}`}
@@ -164,7 +164,7 @@ export default function SportPage({ sport }: SportPageProps) {
         {/* Documents */}
         {sport.pdfs && sport.pdfs.length > 0 && (
           <section>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Documents</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Documents</h2>
             <PdfSelector pdfs={sport.pdfs} />
           </section>
         )}

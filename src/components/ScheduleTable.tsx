@@ -32,19 +32,19 @@ export default function ScheduleTable({ schedule, sportName }: ScheduleTableProp
           </caption>
           <thead className="bg-gray-50">
             <tr>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Jour
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th scope="col" className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Horaires
               </th>
               {!hasSingleLocation && (
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th scope="col" className="hidden sm:table-cell px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Lieu
                 </th>
               )}
               {hasNotes && (
-                <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                <th scope="col" className="hidden md:table-cell px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Note
                 </th>
               )}
@@ -53,19 +53,27 @@ export default function ScheduleTable({ schedule, sportName }: ScheduleTableProp
           <tbody className="bg-white divide-y divide-gray-200">
             {schedule.map((entry, index) => (
               <tr key={index} className="hover:bg-gray-50">
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                  {entry.day}
+                <td className="px-3 sm:px-6 py-4 text-sm font-medium text-gray-900">
+                  <div className="font-semibold">{entry.day}</div>
+                  {/* Show location on mobile when multiple locations */}
+                  {!hasSingleLocation && entry.location && (
+                    <div className="sm:hidden text-xs text-gray-500 mt-1">{entry.location}</div>
+                  )}
+                  {/* Show note on mobile when exists */}
+                  {hasNotes && entry.note && (
+                    <div className="md:hidden text-xs text-gray-500 mt-1">{entry.note}</div>
+                  )}
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  {entry.time}
+                <td className="px-3 sm:px-6 py-4 text-sm text-gray-500">
+                  <div className="whitespace-nowrap">{entry.time}</div>
                 </td>
                 {!hasSingleLocation && (
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <td className="hidden sm:table-cell px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     {entry.location || '-'}
                   </td>
                 )}
                 {hasNotes && (
-                  <td className="px-6 py-4 text-sm text-gray-500">
+                  <td className="hidden md:table-cell px-3 sm:px-6 py-4 text-sm text-gray-500">
                     {entry.note || '-'}
                   </td>
                 )}

@@ -30,7 +30,7 @@ export default function SportCard({ sport }: SportCardProps) {
             </div>
           )}
         </div>
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           <div className="flex items-center gap-3 mb-2">
             {sport.logo && (
               <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
@@ -43,7 +43,7 @@ export default function SportCard({ sport }: SportCardProps) {
                 />
               </div>
             )}
-            <h3 className="text-xl font-semibold text-gray-900">{sport.name}</h3>
+            <h3 className="text-lg sm:text-xl font-semibold text-gray-900">{sport.name}</h3>
           </div>
           <p className="text-gray-600 text-sm line-clamp-3">{sport.intro}</p>
           <div className="mt-4">
