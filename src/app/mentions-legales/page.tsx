@@ -51,19 +51,25 @@ export default function MentionsLegalesPage() {
           <h2 className="text-xl font-semibold mb-2">3. Hébergeur du site</h2>
           <p>
             Le site est hébergé par :{' '}
-            <span className="text-gray-900 font-medium">
-              XXXXXX (nom de l’hébergeur)
-            </span>
+            <span className="text-gray-900 font-medium">Vercel Inc.</span>
           </p>
           <p>
             Adresse :{' '}
             <span className="text-gray-900 font-medium">
-              XXXXXX (adresse de l’hébergeur)
+              340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis
             </span>
           </p>
           <p>
-            Téléphone :{' '}
-            <span className="text-gray-900 font-medium">XXXXXX</span>
+            Site web :{' '}
+            <span className="text-gray-900 font-medium">
+              https://vercel.com
+            </span>
+          </p>
+          <p>
+            Contact :{' '}
+            <span className="text-gray-900 font-medium">
+              support@vercel.com
+            </span>
           </p>
         </div>
 
