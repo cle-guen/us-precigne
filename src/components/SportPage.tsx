@@ -122,7 +122,7 @@ export default function SportPage({ sport }: SportPageProps) {
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
             Contacts
           </h2>
-          <div className="bg-gray-50 rounded-lg p-4 sm:p-6">
+          <div className="bg-gray-50 rounded-lg py-4 sm:py-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {sport.contacts.phone && (
                 <a
