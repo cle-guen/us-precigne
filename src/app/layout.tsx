@@ -119,6 +119,12 @@ export default function RootLayout({
                   >
                     Actualités
                   </Link>
+                  <Link
+                    href="/mentions-legales"
+                    className="block text-gray-300 hover:text-white transition-colors"
+                  >
+                    Mentions légales
+                  </Link>
                 </div>
               </div>
             </div>
@@ -128,7 +134,6 @@ export default function RootLayout({
                   &copy; 2024 Association Sportive. Tous droits réservés.
                 </p>
                 <div className="flex items-center gap-2">
-                  <span className="text-gray-400 text-sm">Partenaire :</span>
                   <a
                     href="https://www.ffco.org/"
                     target="_blank"
