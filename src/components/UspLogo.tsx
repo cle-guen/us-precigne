@@ -1,6 +1,5 @@
-import Image from 'next/image'
-
 // UspLogo.tsx
+
 export default function UspLogo({
   className = '',
   bottomText,
@@ -84,29 +83,17 @@ export default function UspLogo({
         />
       </g>
 
-      {/* Logo central en SVG <image> (fiable) */}
+      {/* Logo central - version compatible Safari */}
       {centerImageSrc && (
-        <foreignObject
+        <image
           x={boxX}
           y={boxY}
           width={boxW}
           height={boxH}
-          clipPath="url(#clip-shield)" // reste découpé par le blason
-        >
-          {/* IMPORTANT: namespace XHTML + position relative pour <Image fill /> */}
-          {/* Container pour centrer l'image */}
-          <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-            <Image
-              src={centerImageSrc}
-              alt="logo central"
-              fill
-              sizes={`${Math.round(boxW)}px`}
-              style={{ objectFit: 'cover' }} // couvre tout l'espace disponible
-              // unoptimized // décommente si tu as des soucis de domaine/loader
-              priority
-            />
-          </div>
-        </foreignObject>
+          href={centerImageSrc}
+          clipPath="url(#clip-shield)"
+          preserveAspectRatio="xMidYMid meet"
+        />
       )}
 
       {/* Bandeau haut */}

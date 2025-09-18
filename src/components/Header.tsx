@@ -87,8 +87,11 @@ export default function Header() {
             href="/"
             className="flex items-center gap-3 text-xl font-bold text-red-700 hover:text-red-800 transition-colors"
           >
-            <div className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center flex-shrink-0">
-              <UspLogo bottomText="OMNISPORTS" />
+            <div className="relative w-7 h-10 sm:w-8 sm:h-12 flex-shrink-0">
+              <UspLogo
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full"
+                bottomText="OMNISPORTS"
+              />
             </div>
             <span className="hidden sm:inline">US Précigné</span>
             <span className="sm:hidden">USP</span>
