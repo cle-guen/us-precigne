@@ -18,17 +18,6 @@ export default function SportCard({ sport }: SportCardProps) {
             className="object-cover group-hover:scale-105 transition-transform duration-300"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
-          {sport.logo && (
-            <div className="absolute top-3 right-3 w-12 h-12 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <Image
-                src={sport.logo}
-                alt={`Logo ${sport.name}`}
-                width={48}
-                height={48}
-                className="object-contain"
-              />
-            </div>
-          )}
         </div>
         <div className="p-4 sm:p-6">
           <div className="flex items-center gap-3 mb-2">

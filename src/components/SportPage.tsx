@@ -17,7 +17,7 @@ export default function SportPage({ sport }: SportPageProps) {
             src={sport.heroImage}
             alt={`Image hero de ${sport.name}`}
             fill
-            className={`object-cover ${sport.slug === 'gym' ? 'object-[center_25%]' : 'object-center'}`}
+            className="object-cover"
             priority
             sizes="100vw"
           />
@@ -26,7 +26,7 @@ export default function SportPage({ sport }: SportPageProps) {
         <div className="relative z-10 text-center text-white px-4">
           {sport.logo && (
             <div className="mb-4 flex justify-center">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center hover:scale-105 transition-transform duration-300">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center">
                 <Image
                   src={sport.logo}
                   alt={`Logo ${sport.name}`}
