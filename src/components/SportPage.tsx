@@ -9,9 +9,9 @@ interface SportPageProps {
 
 export default function SportPage({ sport }: SportPageProps) {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen md:pt-16">
       {/* Hero Section */}
-      <section className="relative min-h-[40vh] max-h-[60vh] flex items-center justify-center max-w-7xl mx-auto overflow-hidden md:rounded-lg mt-8">
+      <section className="relative min-h-[40vh] max-h-[60vh] flex items-center justify-center max-w-7xl mx-auto overflow-hidden md:rounded-lg">
         <div className="absolute inset-0">
           <Image
             src={sport.heroImage}
