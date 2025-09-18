@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-gray-50 pb-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="bg-white rounded-2xl shadow-lg border-l-8 border-red-700 p-8 md:p-12">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
@@ -119,7 +119,7 @@ export default function HomePage() {
             <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 text-center">
               <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
-                  className="w-8 h-8 text-gray-700"
+                  className="w-12 h-12 text-gray-700"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

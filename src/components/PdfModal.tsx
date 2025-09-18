@@ -16,7 +16,7 @@ export default function PdfModal({
   label,
 }: PdfModalProps) {
   return (
-    <Modal isOpen={isOpen} onClose={onClose} size="full">
+    <Modal isOpen={isOpen} onClose={onClose} size="xl">
       <div className="flex flex-col h-full max-h-[85vh]">
         {/* Header */}
         <div className="flex-shrink-0 pb-4 mb-4 border-b border-gray-200">
