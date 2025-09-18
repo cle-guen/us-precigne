@@ -1,16 +1,16 @@
 import { ScheduleEntry } from '@/lib/types'
 
-interface ScheduleTableProps {
+interface ScheduleTableFootballProps {
   schedule: ScheduleEntry[]
   sportName: string
   location?: string
 }
 
-export default function ScheduleTable({
+export default function ScheduleTableFootball({
   schedule,
   sportName,
   location,
-}: ScheduleTableProps) {
+}: ScheduleTableFootballProps) {
   // Vérifier s'il y a des notes
   const hasNotes = schedule.some(
     (entry) => entry.note && entry.note.trim() !== '',
@@ -37,6 +37,12 @@ export default function ScheduleTable({
                 scope="col"
                 className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
               >
+                Équipe
+              </th>
+              <th
+                scope="col"
+                className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+              >
                 Jour
               </th>
               <th
@@ -45,36 +51,24 @@ export default function ScheduleTable({
               >
                 Horaires
               </th>
-              {hasNotes && (
-                <th
-                  scope="col"
-                  className="hidden md:table-cell px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                >
-                  Note
-                </th>
-              )}
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
             {schedule.map((entry, index) => (
               <tr key={index} className="hover:bg-gray-50">
                 <td className="px-3 sm:px-6 py-4 text-sm font-medium text-gray-900">
-                  <div className="font-semibold">{entry.day}</div>
-                  {/* Show note on mobile when exists */}
-                  {hasNotes && entry.note && (
-                    <div className="md:hidden text-xs text-gray-500 mt-1">
-                      {entry.note}
-                    </div>
-                  )}
+                  <div className="font-semibold">{entry.note || '-'}</div>
                 </td>
                 <td className="px-3 sm:px-6 py-4 text-sm text-gray-500">
-                  <div className="whitespace-nowrap">{entry.time}</div>
+                  <div className="whitespace-pre-line">
+                    {entry.day.replace(/\s*&\s*/g, '\n')}
+                  </div>
                 </td>
-                {hasNotes && (
-                  <td className="hidden md:table-cell px-3 sm:px-6 py-4 text-sm text-gray-500">
-                    {entry.note || '-'}
-                  </td>
-                )}
+                <td className="px-3 sm:px-6 py-4 text-sm text-gray-500">
+                  <div className="whitespace-pre-line">
+                    {entry.time.replace(/\s*&\s*/g, '\n')}
+                  </div>
+                </td>
               </tr>
             ))}
           </tbody>

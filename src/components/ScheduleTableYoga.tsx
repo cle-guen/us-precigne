@@ -1,16 +1,16 @@
 import { ScheduleEntry } from '@/lib/types'
 
-interface ScheduleTableProps {
+interface ScheduleTableYogaProps {
   schedule: ScheduleEntry[]
   sportName: string
   location?: string
 }
 
-export default function ScheduleTable({
+export default function ScheduleTableYoga({
   schedule,
   sportName,
   location,
-}: ScheduleTableProps) {
+}: ScheduleTableYogaProps) {
   // Vérifier s'il y a des notes
   const hasNotes = schedule.some(
     (entry) => entry.note && entry.note.trim() !== '',
@@ -50,7 +50,7 @@ export default function ScheduleTable({
                   scope="col"
                   className="hidden md:table-cell px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                 >
-                  Note
+                  Durée
                 </th>
               )}
             </tr>
@@ -60,7 +60,7 @@ export default function ScheduleTable({
               <tr key={index} className="hover:bg-gray-50">
                 <td className="px-3 sm:px-6 py-4 text-sm font-medium text-gray-900">
                   <div className="font-semibold">{entry.day}</div>
-                  {/* Show note on mobile when exists */}
+                  {/* Show duration on mobile when exists */}
                   {hasNotes && entry.note && (
                     <div className="md:hidden text-xs text-gray-500 mt-1">
                       {entry.note}

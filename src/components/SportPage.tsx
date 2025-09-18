@@ -2,6 +2,8 @@ import { Sport } from '@/lib/types'
 import Image from 'next/image'
 import PdfSelector from './PdfSelector'
 import ScheduleTable from './ScheduleTable'
+import ScheduleTableFootball from './ScheduleTableFootball'
+import ScheduleTableYoga from './ScheduleTableYoga'
 
 interface SportPageProps {
   sport: Sport
@@ -114,7 +116,25 @@ export default function SportPage({ sport }: SportPageProps) {
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
             Horaires
           </h2>
-          <ScheduleTable schedule={sport.schedule} sportName={sport.name} />
+          {sport.slug === 'football' ? (
+            <ScheduleTableFootball
+              schedule={sport.schedule}
+              sportName={sport.name}
+              location={sport.location}
+            />
+          ) : sport.slug === 'yoga' ? (
+            <ScheduleTableYoga
+              schedule={sport.schedule}
+              sportName={sport.name}
+              location={sport.location}
+            />
+          ) : (
+            <ScheduleTable
+              schedule={sport.schedule}
+              sportName={sport.name}
+              location={sport.location}
+            />
+          )}
         </section>
 
         {/* Contacts */}

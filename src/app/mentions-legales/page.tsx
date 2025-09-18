@@ -41,9 +41,7 @@ export default function MentionsLegalesPage() {
           </h2>
           <p>
             Directeur de la publication :{' '}
-            <span className="text-gray-900 font-medium">
-              XXXXXX (nom du président de l’association ou représentant légal)
-            </span>
+            <span className="text-gray-900 font-medium">Thierry Coquereau</span>
           </p>
         </div>
 

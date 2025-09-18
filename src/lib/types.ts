@@ -8,7 +8,6 @@ export interface ContactLinks {
 export interface ScheduleEntry {
   day: string
   time: string
-  location?: string
   note?: string
 }
 
@@ -19,6 +18,7 @@ export interface Sport {
   heroImage: string
   intro: string
   contentImage?: string
+  location?: string
   schedule: ScheduleEntry[]
   contacts: ContactLinks
   pdfs?: { label: string; file: string }[]
