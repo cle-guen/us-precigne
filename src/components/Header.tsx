@@ -1,4 +1,5 @@
 'use client'
+import UspLogo from '@/components/UspLogo'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
@@ -87,14 +88,15 @@ export default function Header() {
             className="flex items-center gap-3 text-xl font-bold text-red-700 hover:text-red-800 transition-colors"
           >
             <div className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center flex-shrink-0">
-              <Image
+              {/* <Image
                 src="/images/logo-us-precigne.png"
                 alt="Logo US Précigné"
                 width={32}
                 height={32}
                 className="object-contain"
                 style={{ width: 'auto', height: 'auto' }}
-              />
+              /> */}
+              <UspLogo />
             </div>
             <span className="hidden sm:inline">US Précigné</span>
             <span className="sm:hidden">USP</span>
