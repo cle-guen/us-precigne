@@ -1,4 +1,5 @@
 import Header from '@/components/Header'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
@@ -153,6 +154,7 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
+        <SpeedInsights />
       </body>
     </html>
   )
