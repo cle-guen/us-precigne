@@ -130,7 +130,8 @@ export default function RootLayout({
             <div className="border-t border-gray-700 mt-8 pt-8">
               <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                 <p className="text-gray-400">
-                  © 2025 Union Sportive de Précigné. Tous droits réservés.
+                  © {new Date().getFullYear()} Union Sportive de Précigné. Tous
+                  droits réservés.
                 </p>
                 <div className="flex items-center gap-2">
                   <a
