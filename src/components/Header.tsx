@@ -88,15 +88,7 @@ export default function Header() {
             className="flex items-center gap-3 text-xl font-bold text-red-700 hover:text-red-800 transition-colors"
           >
             <div className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center flex-shrink-0">
-              {/* <Image
-                src="/images/logo-us-precigne.png"
-                alt="Logo US Précigné"
-                width={32}
-                height={32}
-                className="object-contain"
-                style={{ width: 'auto', height: 'auto' }}
-              /> */}
-              <UspLogo />
+              <UspLogo bottomText="OMNISPORTS" />
             </div>
             <span className="hidden sm:inline">US Précigné</span>
             <span className="sm:hidden">USP</span>
@@ -157,6 +149,7 @@ export default function Header() {
                               width={20}
                               height={20}
                               className="object-contain"
+                              style={{ filter: 'brightness(0) saturate(100%)' }}
                             />
                           </div>
                         )}
@@ -323,6 +316,9 @@ export default function Header() {
                                   width={20}
                                   height={20}
                                   className="object-contain"
+                                  style={{
+                                    filter: 'brightness(0) saturate(100%)',
+                                  }}
                                 />
                               </span>
                             )}

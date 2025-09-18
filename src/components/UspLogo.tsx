@@ -1,24 +1,31 @@
-// UspLogo.tsx
-export default function UspLogo({ className = '' }: { className?: string }) {
-  // Gabarit demandé
-  const W = 80 // largeur ~80
-  const H = 120 // hauteur ~120
-  const BANNER_H = H * (1 / 5) // 1/5 -> 24
-  const MID_H = H * (3 / 5) // 3/5 -> 72
-  const BOTTOM_H = H * (1 / 5) // 1/5 -> 24
-  const CONTENT_TOP = BANNER_H // début des bandes
-  const BOTTOM_START_Y = BANNER_H + MID_H // 24 + 72 = 96
+import Image from 'next/image'
 
-  // Bandes 1:3:1 (7 slots égaux, 3 rouges aux positions 1,3,5)
+// UspLogo.tsx
+export default function UspLogo({
+  className = '',
+  bottomText,
+  centerImageSrc,
+  centerImageScale = 0.65,
+  centerImageYOffset = 0,
+}: {
+  className?: string
+  bottomText: string
+  centerImageSrc?: string
+  centerImageScale?: number
+  centerImageYOffset?: number
+}) {
+  const W = 80
+  const H = 120
+  const BANNER_H = H * (1 / 5) // 24
+  const MID_H = H * (3 / 5) // 72
+  const BOTTOM_H = H * (1 / 5) // 24
+  const CONTENT_TOP = BANNER_H // 24
+  const BOTTOM_START_Y = BANNER_H + MID_H // 96
+
   const SLOTS = 7
   const SLOT_W = W / SLOTS
 
-  // Texte: même largeur visuelle pour les 2 lignes
-  const TEXT_PAD = 6 // marge interne dans le bandeau
-  const TEXT_WIDTH = W - TEXT_PAD * 2
-
-  // --- FORME BLASON : côtés droits -> large arrondi en bas (sans pointe) ---
-  // Symétrique, “épaules” verticales jusqu'à y=96, puis 2 courbes vers le bas arrondi (y max = 120)
+  // Forme arrondie (ta version actuelle)
   const SHIELD_PATH = `
       M 0 0
       H ${W}
@@ -27,6 +34,12 @@ export default function UspLogo({ className = '' }: { className?: string }) {
       C ${18} ${H}, 0 ${H - BOTTOM_H * 0.5}, 0 ${BOTTOM_START_Y}
       Z
     `
+
+  // Taille/position du logo central
+  const boxW = W * centerImageScale
+  const boxH = boxW // carré
+  const boxX = (W - boxW) / 2
+  const boxY = CONTENT_TOP + (MID_H - boxH) / 1 + centerImageYOffset // centré dans la zone médiane
 
   return (
     <svg
@@ -43,10 +56,10 @@ export default function UspLogo({ className = '' }: { className?: string }) {
         </clipPath>
       </defs>
 
-      {/* Corps du blason */}
+      {/* Corps */}
       <path d={SHIELD_PATH} fill="#000" />
 
-      {/* Bandes rouges (mêmes largeurs que les noires), découpées par le blason */}
+      {/* Bandes rouges */}
       <g clipPath="url(#clip-shield)">
         <rect
           x={SLOT_W * 1}
@@ -71,10 +84,35 @@ export default function UspLogo({ className = '' }: { className?: string }) {
         />
       </g>
 
-      {/* Bandeau blanc en haut (1/5 de la hauteur) */}
+      {/* Logo central en SVG <image> (fiable) */}
+      {centerImageSrc && (
+        <foreignObject
+          x={boxX}
+          y={boxY}
+          width={boxW}
+          height={boxH}
+          clipPath="url(#clip-shield)" // reste découpé par le blason
+        >
+          {/* IMPORTANT: namespace XHTML + position relative pour <Image fill /> */}
+          {/* Container pour centrer l'image */}
+          <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+            <Image
+              src={centerImageSrc}
+              alt="logo central"
+              fill
+              sizes={`${Math.round(boxW)}px`}
+              style={{ objectFit: 'cover' }} // couvre tout l'espace disponible
+              // unoptimized // décommente si tu as des soucis de domaine/loader
+              priority
+            />
+          </div>
+        </foreignObject>
+      )}
+
+      {/* Bandeau haut */}
       <rect x={0} y={0} width={W} height={BANNER_H} fill="#fff" />
 
-      {/* Contours nets */}
+      {/* Contours */}
       <path d={SHIELD_PATH} fill="none" stroke="#000" strokeWidth={2.2} />
       <rect
         x={0}
@@ -86,34 +124,32 @@ export default function UspLogo({ className = '' }: { className?: string }) {
         strokeWidth={2.2}
       />
 
-      {/* Textes (même largeur grâce à textLength) */}
+      {/* Textes */}
       <text
         x={W / 2}
-        y={BANNER_H * 0.42} // ~42% du bandeau
+        y={BANNER_H * 0.42}
         fontFamily="system-ui, Arial, sans-serif"
         fontSize={7}
         textAnchor="middle"
         fontWeight="500"
         fill="#000"
         lengthAdjust="spacingAndGlyphs"
-        textLength={TEXT_WIDTH}
         style={{ textTransform: 'uppercase' }}
       >
         US PRÉCIGNÉ
       </text>
       <text
         x={W / 2}
-        y={BANNER_H * 0.82} // ~82% du bandeau (2e ligne)
+        y={BANNER_H * 0.82}
         fontFamily="system-ui, Arial, sans-serif"
         fontSize={7}
         textAnchor="middle"
         fontWeight="500"
         fill="#000"
         lengthAdjust="spacingAndGlyphs"
-        textLength={TEXT_WIDTH}
         style={{ textTransform: 'uppercase' }}
       >
-        OMNISPORTS
+        {bottomText}
       </text>
     </svg>
   )

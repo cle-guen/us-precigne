@@ -1,6 +1,7 @@
 import { Sport } from '@/lib/types'
 import Image from 'next/image'
 import Link from 'next/link'
+import UspLogo from './UspLogo'
 
 interface SportCardProps {
   sport: Sport
@@ -22,13 +23,13 @@ export default function SportCard({ sport }: SportCardProps) {
         <div className="p-4 sm:p-6">
           <div className="flex items-center gap-3 mb-2">
             {sport.logo && (
-              <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
-                <Image
-                  src={sport.logo}
-                  alt={`Logo ${sport.name}`}
-                  width={32}
-                  height={32}
-                  className="object-contain"
+              <div className="w-10 h-14 flex items-center justify-center flex-shrink-0">
+                <UspLogo
+                  className="w-full h-full"
+                  bottomText={sport.name.toUpperCase()}
+                  centerImageSrc={sport.logo}
+                  centerImageScale={0.5}
+                  centerImageYOffset={0}
                 />
               </div>
             )}

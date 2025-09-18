@@ -1,3 +1,4 @@
+import UspLogo from '@/components/UspLogo'
 import { Sport } from '@/lib/types'
 import Image from 'next/image'
 import PdfSelector from './PdfSelector'
@@ -28,13 +29,13 @@ export default function SportPage({ sport }: SportPageProps) {
         <div className="relative z-10 text-center text-white px-4">
           {sport.logo && (
             <div className="mb-4 flex justify-center">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center">
-                <Image
-                  src={sport.logo}
-                  alt={`Logo ${sport.name}`}
-                  width={80}
-                  height={80}
-                  className="object-contain"
+              <div className="w-16 h-24 sm:w-20 sm:h-28 md:w-24 md:h-36 flex items-center justify-center">
+                <UspLogo
+                  className="w-full h-full"
+                  bottomText={sport.name.toUpperCase()}
+                  centerImageSrc={sport.logo}
+                  centerImageScale={0.6}
+                  centerImageYOffset={-2}
                 />
               </div>
             </div>
