@@ -248,14 +248,56 @@ export default function Header() {
                 }`}
                 ref={mobileMenuPanelRef}
               >
-                <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-b border-gray-200 shadow-lg">
-                  <Link
-                    href="/"
-                    className="block px-3 py-2 text-gray-700 hover:text-red-700 hover:bg-red-50 rounded-md font-medium transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Accueil
-                  </Link>
+                <div className="px-2 pt-2 pb-3 space-y-3 bg-white border-b border-gray-200 shadow-lg">
+                  {/* Mobile Pages Section */}
+                  <div className="px-3 py-2">
+                    <p className="text-sm font-semibold text-gray-500 mb-2">
+                      Pages
+                    </p>
+                    <div className="space-y-1 pl-3">
+                      <Link
+                        href="/"
+                        className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:text-red-700 hover:bg-red-50 rounded-md transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <span>Accueil</span>
+                        <svg
+                          className="w-4 h-4 text-gray-400"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </Link>
+
+                      <Link
+                        href="/actualites"
+                        className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:text-red-700 hover:bg-red-50 rounded-md transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        <span>Actualités</span>
+                        <svg
+                          className="w-4 h-4 text-gray-400"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
 
                   {/* Mobile Sports Section */}
                   <div className="px-3 py-2">
@@ -267,33 +309,40 @@ export default function Header() {
                         <Link
                           key={sport.slug}
                           href={`/sports/${sport.slug}`}
-                          className="flex items-center gap-3 px-3 py-2 text-sm text-gray-700 hover:text-red-700 hover:bg-red-50 rounded-md transition-colors"
+                          className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:text-red-700 hover:bg-red-50 rounded-md transition-colors"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
-                          {sport.logo && (
-                            <div className="w-5 h-5 flex items-center justify-center flex-shrink-0">
-                              <Image
-                                src={sport.logo}
-                                alt={`Logo ${sport.name}`}
-                                width={20}
-                                height={20}
-                                className="object-contain"
-                              />
-                            </div>
-                          )}
-                          {sport.name}
+                          <span className="flex items-center gap-3">
+                            {sport.logo && (
+                              <span className="w-5 h-5 flex items-center justify-center flex-shrink-0">
+                                <Image
+                                  src={sport.logo}
+                                  alt={`Logo ${sport.name}`}
+                                  width={20}
+                                  height={20}
+                                  className="object-contain"
+                                />
+                              </span>
+                            )}
+                            <span>{sport.name}</span>
+                          </span>
+                          <svg
+                            className="w-4 h-4 text-gray-400"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M9 5l7 7-7 7"
+                            />
+                          </svg>
                         </Link>
                       ))}
                     </div>
                   </div>
-
-                  <Link
-                    href="/actualites"
-                    className="block px-3 py-2 text-gray-700 hover:text-red-700 hover:bg-red-50 rounded-md font-medium transition-colors"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Actualités
-                  </Link>
                 </div>
               </div>
             </>,
