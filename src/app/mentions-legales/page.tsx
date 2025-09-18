@@ -21,7 +21,7 @@ export default function MentionsLegalesPage() {
           <p>
             Siège social :{' '}
             <span className="text-gray-900 font-medium">
-              XXXXXX (adresse complète)
+              Stade Alain de Rougé, route de Sablé Sur Sarthe, 72300 Précigné
             </span>
           </p>
           <p>
