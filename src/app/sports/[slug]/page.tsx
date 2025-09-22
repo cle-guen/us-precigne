@@ -29,7 +29,6 @@ export async function generateMetadata({
 
   const baseUrl = 'https://usprecigne.fr'
   const sportUrl = `${baseUrl}/sports/${sport.slug}`
-  const sportImage = `${baseUrl}${sport.heroImage}`
 
   return {
     title: `${sport.name} - US Précigné`,
@@ -50,7 +49,7 @@ export async function generateMetadata({
       description: `${sport.intro} Découvrez nos cours, horaires et inscriptions pour ${sport.name.toLowerCase()} à l'US Précigné.`,
       images: [
         {
-          url: sportImage,
+          url: '/images/logos/usp-logo.png',
           width: 1200,
           height: 630,
           alt: `${sport.name} - US Précigné`,
@@ -61,7 +60,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: `${sport.name} - US Précigné`,
       description: `${sport.intro} Découvrez nos cours, horaires et inscriptions pour ${sport.name.toLowerCase()} à l'US Précigné.`,
-      images: [sportImage],
+      images: ['/images/logos/usp-logo.png'],
     },
     robots: {
       index: true,

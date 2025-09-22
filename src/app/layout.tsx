@@ -36,7 +36,7 @@ export const metadata: Metadata = {
       'Union Sportive de Précigné - Association omnisports créée en 1921 : Football, Gymnastique, Judo, Tennis et Yoga. Rejoignez-nous pour pratiquer votre sport favori !',
     images: [
       {
-        url: '/og/opengraph-image',
+        url: '/images/logos/usp-logo.png',
         width: 1200,
         height: 630,
         alt: 'US Précigné - Association Omnisports',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     title: 'US Précigné - Association Omnisports',
     description:
       'Union Sportive de Précigné - Association omnisports créée en 1921 : Football, Gymnastique, Judo, Tennis et Yoga.',
-    images: ['/og/opengraph-image'],
+    images: ['/images/logos/usp-logo.png'],
   },
   robots: {
     index: true,
