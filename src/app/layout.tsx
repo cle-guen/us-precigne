@@ -9,11 +9,58 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'US Précigné - Accueil',
+  title: 'US Précigné - Association Omnisports',
   description:
-    'Union Sportive de Précigné - Association omnisports créée en 1921 : Football, Gymnastique, Judo, Tennis et Yoga.',
+    'Union Sportive de Précigné - Association omnisports créée en 1921 : Football, Gymnastique, Judo, Tennis et Yoga. Rejoignez-nous pour pratiquer votre sport favori !',
   keywords:
-    'US Précigné, sport, association, football, gym, judo, tennis, yoga, Précigné',
+    'US Précigné, sport, association, football, gym, judo, tennis, yoga, Précigné, omnisports, club sportif',
+  authors: [{ name: 'US Précigné' }],
+  creator: 'US Précigné',
+  publisher: 'US Précigné',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://usprecigne.fr'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'fr_FR',
+    url: 'https://usprecigne.fr',
+    siteName: 'US Précigné',
+    title: 'US Précigné - Association Omnisports',
+    description:
+      'Union Sportive de Précigné - Association omnisports créée en 1921 : Football, Gymnastique, Judo, Tennis et Yoga. Rejoignez-nous pour pratiquer votre sport favori !',
+    images: [
+      {
+        url: '/images/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'US Précigné - Association Omnisports',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'US Précigné - Association Omnisports',
+    description:
+      'Union Sportive de Précigné - Association omnisports créée en 1921 : Football, Gymnastique, Judo, Tennis et Yoga.',
+    images: ['/images/og-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export default function RootLayout({

@@ -3,10 +3,52 @@ import { news } from '@/data/news'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Actualités - Association Sportive',
+  title: 'Actualités - US Précigné',
   description:
-    'Suivez toutes les actualités de notre association sportive : événements, tournois et nouvelles activités.',
-  keywords: 'actualités, sport, association, événements, tournois, nouvelles',
+    "Suivez toutes les actualités de l'US Précigné : événements, tournois, résultats de compétitions et nouvelles activités de notre association omnisports.",
+  keywords:
+    'actualités, US Précigné, sport, association, événements, tournois, nouvelles, compétitions, résultats',
+  authors: [{ name: 'US Précigné' }],
+  creator: 'US Précigné',
+  publisher: 'US Précigné',
+  alternates: {
+    canonical: 'https://usprecigne.fr/actualites',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'fr_FR',
+    url: 'https://usprecigne.fr/actualites',
+    siteName: 'US Précigné',
+    title: 'Actualités - US Précigné',
+    description:
+      "Suivez toutes les actualités de l'US Précigné : événements, tournois, résultats de compétitions et nouvelles activités de notre association omnisports.",
+    images: [
+      {
+        url: '/images/og-actualites.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Actualités US Précigné',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Actualités - US Précigné',
+    description:
+      "Suivez toutes les actualités de l'US Précigné : événements, tournois, résultats de compétitions et nouvelles activités.",
+    images: ['/images/og-actualites.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export default function ActualitesPage() {
