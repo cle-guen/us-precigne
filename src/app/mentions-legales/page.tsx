@@ -1,11 +1,5 @@
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Mentions légales — US Précigné',
-  description:
-    "Mentions légales du site de l'US Précigné. Ce site est informatif et ne collecte pas de données personnelles.",
-}
-
 export default function MentionsLegalesPage() {
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 pt-16">
@@ -146,4 +140,10 @@ export default function MentionsLegalesPage() {
       </section>
     </div>
   )
+}
+
+export const metadata: Metadata = {
+  title: 'Mentions légales — US Précigné',
+  description:
+    "Mentions légales du site de l'US Précigné. Ce site est informatif et ne collecte pas de données personnelles.",
 }
