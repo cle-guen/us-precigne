@@ -161,7 +161,7 @@ export default async function Image() {
             marginBottom: '40px',
           }}
         >
-          Suivez toute l'actualité de notre association : événements, tournois,
+          Suivez toute l‘actualité de notre association : événements, tournois,
           résultats de compétitions et nouvelles activités
         </div>
 
