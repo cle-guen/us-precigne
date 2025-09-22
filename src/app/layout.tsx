@@ -1,4 +1,5 @@
 import Header from '@/components/Header'
+import { config } from '@/lib/config'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: 'https://usprecigne.fr',
+    url: config.baseUrl,
     siteName: 'US Précigné',
     title: 'US Précigné - Association Omnisports',
     description:

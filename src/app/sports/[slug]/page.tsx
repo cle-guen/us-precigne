@@ -1,5 +1,6 @@
 import SportPage from '@/components/SportPage'
 import { sports } from '@/data/sports'
+import { config } from '@/lib/config'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
@@ -27,7 +28,7 @@ export async function generateMetadata({
     }
   }
 
-  const baseUrl = 'https://usprecigne.fr'
+  const baseUrl = config.baseUrl
   const sportUrl = `${baseUrl}/sports/${sport.slug}`
 
   return {

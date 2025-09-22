@@ -1,5 +1,6 @@
 import NewsList from '@/components/NewsList'
 import { news } from '@/data/news'
+import { config } from '@/lib/config'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -12,12 +13,12 @@ export const metadata: Metadata = {
   creator: 'US Précigné',
   publisher: 'US Précigné',
   alternates: {
-    canonical: 'https://usprecigne.fr/actualites',
+    canonical: `${config.baseUrl}/actualites`,
   },
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: 'https://usprecigne.fr/actualites',
+    url: `${config.baseUrl}/actualites`,
     siteName: 'US Précigné',
     title: 'Actualités - US Précigné',
     description:
