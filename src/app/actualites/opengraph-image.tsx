@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
@@ -24,7 +25,7 @@ export default async function Image() {
           backgroundImage: 'linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%)',
         }}
       >
-        {/* Header avec logo simplifié */}
+        {/* Header avec logo */}
         <div
           style={{
             display: 'flex',
@@ -32,91 +33,17 @@ export default async function Image() {
             marginBottom: '40px',
           }}
         >
-          {/* Logo US Précigné - version simplifiée */}
-          <div
+          {/* Logo US Précigné */}
+          <img
+            src="https://usprecigne.fr/images/logos/usp-logo.png"
+            alt="US Précigné"
             style={{
               width: '120px',
               height: '180px',
-              backgroundColor: '#000000',
-              borderRadius: '8px',
               marginRight: '30px',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              position: 'relative',
+              objectFit: 'contain',
             }}
-          >
-            {/* Bandes rouges */}
-            <div
-              style={{
-                position: 'absolute',
-                left: '17px',
-                top: '0',
-                width: '17px',
-                height: '100%',
-                backgroundColor: '#dc2626',
-              }}
-            />
-            <div
-              style={{
-                position: 'absolute',
-                left: '51px',
-                top: '0',
-                width: '17px',
-                height: '100%',
-                backgroundColor: '#dc2626',
-              }}
-            />
-            <div
-              style={{
-                position: 'absolute',
-                left: '85px',
-                top: '0',
-                width: '17px',
-                height: '100%',
-                backgroundColor: '#dc2626',
-              }}
-            />
-            {/* Bandeau blanc */}
-            <div
-              style={{
-                position: 'absolute',
-                top: '0',
-                left: '0',
-                width: '100%',
-                height: '36px',
-                backgroundColor: '#ffffff',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <div
-                style={{
-                  fontSize: '12px',
-                  fontWeight: '600',
-                  color: '#000000',
-                  textAlign: 'center',
-                  lineHeight: '1.2',
-                }}
-              >
-                US PRÉCIGNÉ
-              </div>
-              <div
-                style={{
-                  fontSize: '12px',
-                  fontWeight: '600',
-                  color: '#000000',
-                  textAlign: 'center',
-                  lineHeight: '1.2',
-                }}
-              >
-                OMNISPORTS
-              </div>
-            </div>
-          </div>
+          />
 
           {/* Titre principal */}
           <div
