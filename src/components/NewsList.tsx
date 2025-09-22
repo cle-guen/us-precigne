@@ -50,7 +50,7 @@ export default function NewsList({ news }: NewsListProps) {
         {news.map((item) => (
           <article
             key={item.id}
-            className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+            className="bg-white border border-gray-200 rounded-lg overflow-hidden"
           >
             <div className="p-6 relative">
               {/* Logo du sport en haut à droite */}
