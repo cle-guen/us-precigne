@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { sports } from '@/data/sports'
 import { ImageResponse } from 'next/og'
 
@@ -59,7 +60,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
         >
           {/* Logo US Précigné */}
           <img
-            src="https://usprecigne.fr/images/logos/usp-logo.png"
+            src="/images/logos/usp-logo.png"
             alt="US Précigné"
             style={{
               width: '120px',

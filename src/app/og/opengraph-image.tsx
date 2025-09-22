@@ -35,7 +35,7 @@ export default async function Image() {
         >
           {/* Logo US Précigné */}
           <img
-            src="https://usprecigne.fr/images/logos/usp-logo.png"
+            src="/images/logos/usp-logo.png"
             alt="US Précigné"
             style={{
               width: '120px',
