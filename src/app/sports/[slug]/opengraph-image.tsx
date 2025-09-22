@@ -49,7 +49,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
           backgroundImage: 'linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%)',
         }}
       >
-        {/* Header avec logo SVG */}
+        {/* Header avec logo simplifié */}
         <div
           style={{
             display: 'flex',
@@ -57,79 +57,91 @@ export default async function Image({ params }: { params: { slug: string } }) {
             marginBottom: '40px',
           }}
         >
-          {/* Logo US Précigné - version SVG simplifiée */}
-          <svg
-            width="120"
-            height="180"
-            viewBox="0 0 80 120"
-            style={{ marginRight: '30px' }}
+          {/* Logo US Précigné - version simplifiée */}
+          <div
+            style={{
+              width: '120px',
+              height: '180px',
+              backgroundColor: '#000000',
+              borderRadius: '8px',
+              marginRight: '30px',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              position: 'relative',
+            }}
           >
-            {/* Corps du bouclier */}
-            <rect x="0" y="0" width="80" height="96" fill="#000000" />
-            <rect
-              x="0"
-              y="96"
-              width="80"
-              height="24"
-              fill="#000000"
-              rx="20"
-              ry="12"
-            />
-
             {/* Bandes rouges */}
-            <rect x="11.4" y="0" width="11.4" height="120" fill="#dc2626" />
-            <rect x="34.2" y="0" width="11.4" height="120" fill="#dc2626" />
-            <rect x="57" y="0" width="11.4" height="120" fill="#dc2626" />
-
+            <div
+              style={{
+                position: 'absolute',
+                left: '17px',
+                top: '0',
+                width: '17px',
+                height: '100%',
+                backgroundColor: '#dc2626',
+              }}
+            />
+            <div
+              style={{
+                position: 'absolute',
+                left: '51px',
+                top: '0',
+                width: '17px',
+                height: '100%',
+                backgroundColor: '#dc2626',
+              }}
+            />
+            <div
+              style={{
+                position: 'absolute',
+                left: '85px',
+                top: '0',
+                width: '17px',
+                height: '100%',
+                backgroundColor: '#dc2626',
+              }}
+            />
             {/* Bandeau blanc */}
-            <rect x="0" y="0" width="80" height="24" fill="#ffffff" />
-
-            {/* Textes */}
-            <text
-              x="40"
-              y="10"
-              fontFamily="system-ui, Arial, sans-serif"
-              fontSize="7"
-              textAnchor="middle"
-              fontWeight="600"
-              fill="#000000"
+            <div
+              style={{
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                width: '100%',
+                height: '36px',
+                backgroundColor: '#ffffff',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
             >
-              US PRÉCIGNÉ
-            </text>
-            <text
-              x="40"
-              y="19"
-              fontFamily="system-ui, Arial, sans-serif"
-              fontSize="7"
-              textAnchor="middle"
-              fontWeight="600"
-              fill="#000000"
-            >
-              OMNISPORTS
-            </text>
-
-            {/* Contours */}
-            <rect
-              x="0"
-              y="0"
-              width="80"
-              height="96"
-              fill="none"
-              stroke="#000000"
-              strokeWidth="2"
-            />
-            <rect
-              x="0"
-              y="96"
-              width="80"
-              height="24"
-              fill="none"
-              stroke="#000000"
-              strokeWidth="2"
-              rx="20"
-              ry="12"
-            />
-          </svg>
+              <div
+                style={{
+                  fontSize: '12px',
+                  fontWeight: '600',
+                  color: '#000000',
+                  textAlign: 'center',
+                  lineHeight: '1.2',
+                }}
+              >
+                US PRÉCIGNÉ
+              </div>
+              <div
+                style={{
+                  fontSize: '12px',
+                  fontWeight: '600',
+                  color: '#000000',
+                  textAlign: 'center',
+                  lineHeight: '1.2',
+                }}
+              >
+                OMNISPORTS
+              </div>
+            </div>
+          </div>
 
           {/* Titre du sport */}
           <div
