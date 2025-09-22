@@ -146,4 +146,47 @@ export const metadata: Metadata = {
   title: 'Mentions légales — US Précigné',
   description:
     "Mentions légales du site de l'US Précigné. Ce site est informatif et ne collecte pas de données personnelles.",
+  keywords:
+    'mentions légales, US Précigné, association, loi 1901, hébergement, Vercel',
+  authors: [{ name: 'US Précigné' }],
+  creator: 'US Précigné',
+  publisher: 'US Précigné',
+  alternates: {
+    canonical: '/mentions-legales',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'fr_FR',
+    url: '/mentions-legales',
+    siteName: 'US Précigné',
+    title: 'Mentions légales — US Précigné',
+    description:
+      "Mentions légales du site de l'US Précigné. Ce site est informatif et ne collecte pas de données personnelles.",
+    images: [
+      {
+        url: '/images/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Mentions légales US Précigné',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mentions légales — US Précigné',
+    description:
+      "Mentions légales du site de l'US Précigné. Ce site est informatif et ne collecte pas de données personnelles.",
+    images: ['/images/og-image.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }

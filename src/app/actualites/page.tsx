@@ -45,7 +45,7 @@ export const metadata: Metadata = {
       "Suivez toutes les actualités de l'US Précigné : événements, tournois, résultats de compétitions et nouvelles activités de notre association omnisports.",
     images: [
       {
-        url: '/images/logos/usp-logo.png',
+        url: '/images/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Actualités US Précigné',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: 'Actualités - US Précigné',
     description:
       "Suivez toutes les actualités de l'US Précigné : événements, tournois, résultats de compétitions et nouvelles activités.",
-    images: ['/images/logos/usp-logo.png'],
+    images: ['/images/og-image.png'],
   },
   robots: {
     index: true,

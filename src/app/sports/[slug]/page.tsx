@@ -50,7 +50,7 @@ export async function generateMetadata({
       description: `${sport.intro} Découvrez nos cours, horaires et inscriptions pour ${sport.name.toLowerCase()} à l'US Précigné.`,
       images: [
         {
-          url: '/images/logos/usp-logo.png',
+          url: '/images/og-image.png',
           width: 1200,
           height: 630,
           alt: `${sport.name} - US Précigné`,
@@ -61,7 +61,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: `${sport.name} - US Précigné`,
       description: `${sport.intro} Découvrez nos cours, horaires et inscriptions pour ${sport.name.toLowerCase()} à l'US Précigné.`,
-      images: ['/images/logos/usp-logo.png'],
+      images: ['/images/og-image.png'],
     },
     robots: {
       index: true,
