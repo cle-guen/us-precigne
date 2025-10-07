@@ -2,6 +2,13 @@ import { NewsItem } from '@/lib/types'
 
 export const news: NewsItem[] = [
   {
+    id: 'yoga-rire',
+    title: 'Séances yoga du rire saison 2025/2026',
+    body: 'Trois séances de yoga du rire seront organisées au cours de la saison : le 26 novembre, le 13 mars et le 3 juin',
+    additionalImages: ['/images/news/yoga-rire.png'],
+    sportSlug: 'yoga',
+  },
+  {
     id: 'judo-ecoles-decouvertes',
     title: 'Journées découvertes avec les écoles Judo',
     body: "Le Judo proposera des journées découvertes avec l'école publique et privée. École privée de St Jean St Joseph le vendredi 1er juillet, puis école publique de la Voutonnière les 4 et 5 juillet.",
