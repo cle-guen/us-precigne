@@ -164,7 +164,7 @@ export default function HomePage() {
                 Secrétaire
               </h3>
               <p className="text-lg font-semibold text-gray-700 mb-1">
-                Caroline RENAULT
+                Caroline RENAUD
               </p>
               <p className="text-sm text-gray-600">
                 Secrétaire de l‘association
