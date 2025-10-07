@@ -223,7 +223,7 @@ export const sports: Sport[] = [
       },
       {
         day: 'Jeudi',
-        time: '14:15 - 15:45',
+        time: '14:30 - 16:00',
         note: '1h30',
       },
     ],
