@@ -2,13 +2,6 @@ import { NewsItem } from '@/lib/types'
 
 export const news: NewsItem[] = [
   {
-    id: 'yoga-portes-ouvertes',
-    title: 'Portes Ouvertes Yoga',
-    body: 'Le Yoga ouvre ses portes le lundi 20 juin aux heures habituelles des cours de 18h30 et 20h30. Participation libre pour les intéressés.',
-    additionalImages: ['/images/news/affiche-portes-ouvertes-yoga.avif'],
-    sportSlug: 'yoga',
-  },
-  {
     id: 'judo-ecoles-decouvertes',
     title: 'Journées découvertes avec les écoles Judo',
     body: "Le Judo proposera des journées découvertes avec l'école publique et privée. École privée de St Jean St Joseph le vendredi 1er juillet, puis école publique de la Voutonnière les 4 et 5 juillet.",
@@ -35,12 +28,6 @@ export const news: NewsItem[] = [
     sportSlug: 'judo',
   },
   {
-    id: 'yoga-initiation-ecole',
-    title: "Journée initiation avec l'école publique Yoga",
-    body: "Les 10 et 17 juin, initiation Yoga pour les élèves de l'école publique de St Jean St Joseph.",
-    sportSlug: 'yoga',
-  },
-  {
     id: 'foot-100ans',
     title: '100 ans du Foot',
     body: 'Pour les 100 ans du Club de Football de Précigné, une soirée est organisée le 1er juillet 2023 (reportée à cause de la crise sanitaire).',
@@ -52,15 +39,5 @@ export const news: NewsItem[] = [
     body: 'Les mercredis 22 et 29 juin : Portes ouvertes Tennis, de 14h à 18h sur les terrains extérieurs de Précigné.',
     additionalImages: ['/images/news/flyer-portes-ouvertes-2022.avif'],
     sportSlug: 'tennis',
-  },
-  {
-    id: 'yoga-ecole-privee',
-    title: "Journées Découvertes Yoga pour l'école privée",
-    body: "Le 5 et 6 mai, journées découvertes Yoga pour les enfants de l'école privée St Jean St Joseph.",
-    additionalImages: [
-      '/images/news/yoga-prive-1.avif',
-      '/images/news/yoga-prive-3.avif',
-    ],
-    sportSlug: 'yoga',
   },
 ]
