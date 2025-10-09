@@ -2,7 +2,7 @@ import { config } from '@/lib/config'
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = config.baseUrl || 'https://us-precigne.vercel.app'
+  const baseUrl = config.baseUrl || 'https://www.unionsportiveprecigne.com/'
 
   return {
     rules: {
