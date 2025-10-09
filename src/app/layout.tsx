@@ -192,6 +192,6 @@ export const metadata: Metadata = {
     apple: '/favicon.ico',
   },
   verification: {
-    google: 'c7a5d24c766400ae',
+    google: 'qN3_XVAhFewsv2fJ39WCSxjuc98uiZhFBF0IYmGEw_E',
   },
 }
