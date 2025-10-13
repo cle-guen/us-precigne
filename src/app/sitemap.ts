@@ -12,13 +12,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${config.baseUrl}/actualites`,
+      url: `${config.baseUrl}actualites`,
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
     {
-      url: `${config.baseUrl}/mentions-legales`,
+      url: `${config.baseUrl}mentions-legales`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.3,
@@ -27,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Pages dynamiques des sports
   const sportPages = sports.map((sport) => ({
-    url: `${config.baseUrl}/sports/${sport.slug}`,
+    url: `${config.baseUrl}sports/${sport.slug}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.9,
