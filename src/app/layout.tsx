@@ -187,10 +187,14 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+    icon: [
+      { url: '/favicon.png', sizes: '192x192', type: 'image/png' },
+      { url: '/favicon.png', sizes: '512x512', type: 'image/png' },
+    ],
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
   },
+  manifest: '/manifest.json',
   verification: {
     google: 'qN3_XVAhFewsv2fJ39WCSxjuc98uiZhFBF0IYmGEw_E',
   },
