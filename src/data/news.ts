@@ -2,6 +2,15 @@ import { NewsItem } from '@/lib/types'
 
 export const news: NewsItem[] = [
   {
+    id: 'telethon-2025',
+    title: 'Rendez-vous Téléthon 2025 à Précigné',
+    body: `Les associations de Précigné vous invitent à un week-end d’animations pour le Téléthon 2025 !  
+  Au programme : thé dansant, activités multisports, balade moto, randonnée pédestre et judo en famille, ainsi que buvette et petite restauration.  
+  La convivialité sera au rendez-vous, même si vous ne participez pas aux activités !`,
+    additionalImages: ['/images/news/affiche-telethon-2025.jpg'],
+    sportSlug: 'association',
+  },
+  {
     id: 'yoga-rire',
     title: 'Séances yoga du rire saison 2025/2026',
     body: 'Trois séances de yoga du rire seront organisées au cours de la saison : le 26 novembre, le 13 mars et le 3 juin',
