@@ -165,8 +165,8 @@ export const sports: Sport[] = [
     },
     pdfs: [
       {
-        label: 'Fiche inscription 2025-2026',
-        file: '/pdfs/tennis_fiche_inscription_2025_2026.pdf',
+        label: 'Fiche inscription 2026-2027',
+        file: '/pdfs/tennis_fiche_inscription_2026_2027.pdf',
       },
       { label: 'Tarifs 2021-2022', file: '/pdfs/tennis_tarifs_2025_2026.pdf' },
       {
@@ -234,14 +234,10 @@ export const sports: Sport[] = [
     },
     pdfs: [
       {
-        label: "Bulletin d'inscription 2025-2026",
-        file: '/pdfs/yoga_bulletin_inscription_2025_2026.pdf',
+        label: "Bulletin d'inscription 2026-2027",
+        file: '/pdfs/yoga_bulletin_inscription_2026_2027.pdf',
       },
-      {
-        label: 'Questionnaire santé CERFA',
-        file: '/pdfs/yoga_questionnaire_sante_cerfa.pdf',
-      },
-      { label: 'Flyer Yoga 2025-2026', file: '/pdfs/yoga_flyer_2025_2026.pdf' },
+      { label: 'Flyer Yoga 2026-2027', file: '/pdfs/yoga_flyer_2026_2027.pdf' },
     ],
   },
 ]
