@@ -165,8 +165,8 @@ export const sports: Sport[] = [
     },
     pdfs: [
       {
-        label: 'Fiche inscription 2026-2027',
-        file: '/pdfs/tennis_fiche_inscription_2026_2027.pdf',
+        label: 'Fiche inscription 2025-2026',
+        file: '/pdfs/tennis_fiche_inscription_2025_2026.pdf',
       },
       { label: 'Tarifs 2021-2022', file: '/pdfs/tennis_tarifs_2025_2026.pdf' },
       {
