@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
+import { FaBars, FaChevronDown, FaChevronRight, FaXmark } from 'react-icons/fa6'
 import { sports } from '../data/sports'
 
 export default function Header() {
@@ -72,7 +73,7 @@ export default function Header() {
   }, [isMobileMenuOpen])
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 supports-[backdrop-filter]:bg-white/60 backdrop-blur shadow-sm border-b border-gray-200">
+    <header className="sticky top-0 z-50 bg-white/95 supports-[backdrop-filter]:bg-white/60 backdrop-blur-sm shadow-xs border-b border-gray-200">
       <nav
         className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
         role="navigation"
@@ -83,7 +84,7 @@ export default function Header() {
             href="/"
             className="flex items-center gap-3 text-xl font-bold text-accent hover:text-accent-hover transition-colors"
           >
-            <div className="relative w-7 h-10 sm:w-8 sm:h-12 flex-shrink-0">
+            <div className="relative w-7 h-10 sm:w-8 sm:h-12 shrink-0">
               <UspLogo
                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full"
                 bottomText="OMNISPORTS"
@@ -110,25 +111,15 @@ export default function Header() {
                 aria-haspopup="true"
               >
                 Sports
-                <svg
+                <FaChevronDown
                   className={`w-4 h-4 transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
+                />
               </button>
 
               {/* Desktop Dropdown Menu */}
               {isDropdownOpen && (
                 <div
-                  className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50"
+                  className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black/5 z-50"
                   onMouseLeave={() => setIsDropdownOpen(false)}
                 >
                   <div className="py-1" role="menu" aria-orientation="vertical">
@@ -141,7 +132,7 @@ export default function Header() {
                         onClick={() => setIsDropdownOpen(false)}
                       >
                         {sport.logo && (
-                          <div className="w-5 h-5 flex items-center justify-center flex-shrink-0">
+                          <div className="w-5 h-5 flex items-center justify-center shrink-0">
                             <Image
                               src={sport.logo}
                               alt={`Logo ${sport.name}`}
@@ -175,9 +166,9 @@ export default function Header() {
                 <Image
                   src="/images/logo-ffco-new.png"
                   alt="Logo FFCO"
-                  width={40}
-                  height={28}
-                  className="object-contain"
+                  width={200}
+                  height={92}
+                  style={{ width: 40, height: 'auto' }}
                 />
               </a>
             </div>
@@ -185,34 +176,17 @@ export default function Header() {
 
           <div className="md:hidden flex items-center">
             <button
-              className="text-gray-700 focus:outline-none"
+              className="text-gray-700 focus:outline-hidden"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-expanded={isMobileMenuOpen}
               aria-label="Menu de navigation"
               ref={mobileMenuButtonRef}
             >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                {isMobileMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
+              {isMobileMenuOpen ? (
+                <FaXmark className="h-6 w-6" />
+              ) : (
+                <FaBars className="h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
@@ -229,7 +203,7 @@ export default function Header() {
                 aria-hidden={!isMobileMenuOpen}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+                <div className="absolute inset-0 bg-black/60 backdrop-blur-xs" />
               </div>
 
               <div
@@ -253,19 +227,7 @@ export default function Header() {
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         <span>Accueil</span>
-                        <svg
-                          className="w-4 h-4 text-gray-400"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
+                        <FaChevronRight className="w-4 h-4 text-gray-400" />
                       </Link>
 
                       <Link
@@ -274,19 +236,7 @@ export default function Header() {
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         <span>Actualités</span>
-                        <svg
-                          className="w-4 h-4 text-gray-400"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 5l7 7-7 7"
-                          />
-                        </svg>
+                        <FaChevronRight className="w-4 h-4 text-gray-400" />
                       </Link>
                     </div>
                   </div>
@@ -306,7 +256,7 @@ export default function Header() {
                         >
                           <span className="flex items-center gap-3">
                             {sport.logo && (
-                              <span className="w-5 h-5 flex items-center justify-center flex-shrink-0">
+                              <span className="w-5 h-5 flex items-center justify-center shrink-0">
                                 <Image
                                   src={sport.logo}
                                   alt={`Logo ${sport.name}`}
@@ -321,19 +271,7 @@ export default function Header() {
                             )}
                             <span>{sport.name}</span>
                           </span>
-                          <svg
-                            className="w-4 h-4 text-gray-400"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M9 5l7 7-7 7"
-                            />
-                          </svg>
+                          <FaChevronRight className="w-4 h-4 text-gray-400" />
                         </Link>
                       ))}
                     </div>

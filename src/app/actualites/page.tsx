@@ -1,6 +1,6 @@
 import NewsList from '@/components/NewsList'
 import { news } from '@/data/news'
-import { config } from '@/lib/config'
+import { pageUrl } from '@/lib/config'
 import type { Metadata } from 'next'
 
 export default function ActualitesPage() {
@@ -33,12 +33,12 @@ export const metadata: Metadata = {
   creator: 'US Précigné',
   publisher: 'US Précigné',
   alternates: {
-    canonical: `${config.baseUrl}/actualites`,
+    canonical: pageUrl('actualites'),
   },
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: `${config.baseUrl}/actualites`,
+    url: pageUrl('actualites'),
     siteName: 'US Précigné',
     title: 'Actualités - US Précigné',
     description:

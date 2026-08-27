@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { FaFutbol, FaHouse, FaNewspaper } from 'react-icons/fa6'
 
 export default function NotFound() {
   return (
@@ -23,27 +24,15 @@ export default function NotFound() {
 
         {/* Sport Icons Animation */}
         <div className="flex justify-center gap-4 mb-12 opacity-60">
-          <div className="w-12 h-12 text-accent animate-bounce">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <circle cx="12" cy="12" r="10" />
-            </svg>
-          </div>
-          <div
+          <FaFutbol className="w-12 h-12 text-accent animate-bounce" />
+          <FaFutbol
             className="w-12 h-12 text-accent animate-bounce"
             style={{ animationDelay: '0.2s' }}
-          >
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <circle cx="12" cy="12" r="10" />
-            </svg>
-          </div>
-          <div
+          />
+          <FaFutbol
             className="w-12 h-12 text-accent animate-bounce"
             style={{ animationDelay: '0.4s' }}
-          >
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <circle cx="12" cy="12" r="10" />
-            </svg>
-          </div>
+          />
         </div>
 
         {/* Action Buttons */}
@@ -52,38 +41,14 @@ export default function NotFound() {
             href="/"
             className="inline-flex items-center px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-colors shadow-lg border-2 border-accent"
           >
-            <svg
-              className="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-              />
-            </svg>
+            <FaHouse className="w-5 h-5 mr-2" />
             Retour à l‘accueil
           </Link>
           <Link
             href="/actualites"
             className="inline-flex items-center px-6 py-3 bg-white text-accent font-semibold rounded-lg border-2 border-accent hover:bg-red-50 transition-colors"
           >
-            <svg
-              className="w-5 h-5 mr-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"
-              />
-            </svg>
+            <FaNewspaper className="w-5 h-5 mr-2" />
             Voir les actualités
           </Link>
         </div>

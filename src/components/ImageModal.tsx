@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import { FaChevronLeft, FaChevronRight, FaXmark } from 'react-icons/fa6'
 
 interface ImageModalProps {
   images: string[]
@@ -71,7 +72,7 @@ export default function ImageModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
       onClick={onClose}
     >
       <div
@@ -81,44 +82,20 @@ export default function ImageModal({
         {/* Bouton fermer */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 p-2 bg-black bg-opacity-50 text-white rounded-full hover:bg-opacity-70 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white"
+          className="absolute top-4 right-4 z-10 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-all duration-200 focus:outline-hidden focus:ring-2 focus:ring-white"
           aria-label="Fermer le modal"
         >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
+          <FaXmark className="w-6 h-6" />
         </button>
 
         {/* Navigation gauche */}
         {hasMultipleImages && currentIndex > 0 && (
           <button
             onClick={() => onNavigate(currentIndex - 1)}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-black bg-opacity-50 text-white rounded-full hover:bg-opacity-70 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white"
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white rounded-full hover:bg-black/70 transition-all duration-200 focus:outline-hidden focus:ring-2 focus:ring-white"
             aria-label="Image précédente"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
+            <FaChevronLeft className="w-6 h-6" />
           </button>
         )}
 
@@ -126,22 +103,10 @@ export default function ImageModal({
         {hasMultipleImages && currentIndex < images.length - 1 && (
           <button
             onClick={() => onNavigate(currentIndex + 1)}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-black bg-opacity-50 text-white rounded-full hover:bg-opacity-70 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white"
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-black/50 text-white rounded-full hover:bg-black/70 transition-all duration-200 focus:outline-hidden focus:ring-2 focus:ring-white"
             aria-label="Image suivante"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
+            <FaChevronRight className="w-6 h-6" />
           </button>
         )}
 
@@ -160,9 +125,7 @@ export default function ImageModal({
             className={`object-contain transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
             onLoad={() => setImageLoaded(true)}
             sizes="100vw"
-            quality={100}
             priority
-            unoptimized={currentImage.endsWith('.avif')}
           />
         </div>
 
@@ -173,10 +136,10 @@ export default function ImageModal({
               <button
                 key={index}
                 onClick={() => onNavigate(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white ${
+                className={`w-3 h-3 rounded-full transition-all duration-200 focus:outline-hidden focus:ring-2 focus:ring-white ${
                   index === currentIndex
                     ? 'bg-white'
-                    : 'bg-white bg-opacity-50 hover:bg-opacity-75'
+                    : 'bg-white/50 hover:bg-white/75'
                 }`}
                 aria-label={`Aller à l'image ${index + 1}`}
               />
@@ -186,7 +149,7 @@ export default function ImageModal({
 
         {/* Compteur d'images */}
         {hasMultipleImages && (
-          <div className="absolute top-4 left-4 bg-black bg-opacity-50 text-white px-3 py-1 rounded-full text-sm">
+          <div className="absolute top-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm">
             {currentIndex + 1} / {images.length}
           </div>
         )}

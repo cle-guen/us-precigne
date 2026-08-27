@@ -1,5 +1,6 @@
 import SportCard from '@/components/SportCard'
 import { sports } from '@/data/sports'
+import { FaEnvelope, FaEuroSign, FaFileLines, FaRegUser } from 'react-icons/fa6'
 
 export default function HomePage() {
   return (
@@ -91,19 +92,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-4xl mx-auto">
             <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 text-center">
               <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg
-                  className="w-8 h-8 text-gray-700"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                  />
-                </svg>
+                <FaRegUser className="w-8 h-8 text-gray-700" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">
                 Président
@@ -118,19 +107,7 @@ export default function HomePage() {
 
             <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 text-center">
               <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg
-                  className="w-14 h-14 text-gray-700"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.2}
-                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
-                  />
-                </svg>
+                <FaEuroSign className="w-8 h-8 text-gray-700" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">
                 Trésorière
@@ -146,19 +123,7 @@ export default function HomePage() {
 
             <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 text-center">
               <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg
-                  className="w-8 h-8 text-gray-700"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  />
-                </svg>
+                <FaFileLines className="w-8 h-8 text-gray-700" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">
                 Secrétaire
@@ -211,19 +176,7 @@ export default function HomePage() {
               href="mailto:usprecigne.omnisports@gmail.com"
               className="inline-flex items-center justify-center px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-colors"
             >
-              <svg
-                className="w-5 h-5 mr-2"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                />
-              </svg>
+              <FaEnvelope className="w-5 h-5 mr-2" />
               usprecigne.omnisports@gmail.com
             </a>
           </div>

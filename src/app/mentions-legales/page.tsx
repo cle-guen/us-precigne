@@ -152,12 +152,12 @@ export const metadata: Metadata = {
   creator: 'US Précigné',
   publisher: 'US Précigné',
   alternates: {
-    canonical: '/mentions-legales',
+    canonical: '/mentions-legales/',
   },
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: '/mentions-legales',
+    url: '/mentions-legales/',
     siteName: 'US Précigné',
     title: 'Mentions légales — US Précigné',
     description:

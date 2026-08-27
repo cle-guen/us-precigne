@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useEffect, useRef } from 'react'
+import { FaXmark } from 'react-icons/fa6'
 
 interface ModalProps {
   isOpen: boolean
@@ -78,7 +79,7 @@ export default function Modal({
     >
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black bg-opacity-75 transition-opacity"
+        className="fixed inset-0 bg-black/75 transition-opacity"
         onClick={handleBackdropClick}
         aria-hidden="true"
       />
@@ -96,19 +97,7 @@ export default function Modal({
             className="absolute top-4 right-4 z-10 p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full transition-colors"
             aria-label="Fermer la modal"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
+            <FaXmark className="w-6 h-6" />
           </button>
 
           {/* Modal content */}

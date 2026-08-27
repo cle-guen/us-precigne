@@ -1,6 +1,6 @@
 import SportPage from '@/components/SportPage'
 import { sports } from '@/data/sports'
-import { config } from '@/lib/config'
+import { pageUrl } from '@/lib/config'
 import { stripRichText } from '@/lib/richText'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
@@ -32,8 +32,7 @@ export async function generateMetadata({
     }
   }
 
-  const baseUrl = config.baseUrl
-  const sportUrl = `${baseUrl}/sports/${sport.slug}`
+  const sportUrl = pageUrl(`sports/${sport.slug}`)
   const description = `${stripRichText(sport.intro)} Découvrez nos cours, horaires et inscriptions pour ${sport.name.toLowerCase()} à l'US Précigné.`
 
   return {

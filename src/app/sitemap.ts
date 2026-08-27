@@ -1,35 +1,33 @@
 import { sports } from '@/data/sports'
-import { config } from '@/lib/config'
+import { pageUrl } from '@/lib/config'
 import { MetadataRoute } from 'next'
 
 export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Pages statiques
   const staticPages = [
     {
-      url: config.baseUrl,
+      url: pageUrl(),
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 1,
     },
     {
-      url: `${config.baseUrl}actualites`,
+      url: pageUrl('actualites'),
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
     {
-      url: `${config.baseUrl}mentions-legales`,
+      url: pageUrl('mentions-legales'),
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.3,
     },
   ]
 
-  // Pages dynamiques des sports
   const sportPages = sports.map((sport) => ({
-    url: `${config.baseUrl}sports/${sport.slug}`,
+    url: pageUrl(`sports/${sport.slug}`),
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
     priority: 0.9,

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { FaFilePdf } from 'react-icons/fa6'
+import { FaArrowUpRightFromSquare, FaFilePdf } from 'react-icons/fa6'
 import PdfModal from './PdfModal'
 
 interface PdfItem {
@@ -35,30 +35,18 @@ export default function PdfSelector({ pdfs }: PdfSelectorProps) {
           <button
             key={index}
             onClick={() => openPdf(pdf)}
-            className="group relative p-4 sm:p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md hover:border-red-300 transition-all duration-200 text-left focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+            className="group relative p-4 sm:p-6 bg-white border border-gray-200 rounded-lg shadow-xs hover:shadow-md hover:border-red-300 transition-all duration-200 text-left focus:outline-hidden focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
             aria-label={`Ouvrir ${pdf.label}`}
           >
             {/* PDF Icon */}
             <div className="flex items-center mb-3">
-              <div className="flex-shrink-0 w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center group-hover:bg-red-200 transition-colors">
+              <div className="shrink-0 w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center group-hover:bg-red-200 transition-colors">
                 <FaFilePdf className="text-accent" />
               </div>
 
               {/* Hover indicator */}
               <div className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                <svg
-                  className="w-5 h-5 text-red-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                  />
-                </svg>
+                <FaArrowUpRightFromSquare className="w-5 h-5 text-red-600" />
               </div>
             </div>
 
@@ -73,7 +61,7 @@ export default function PdfSelector({ pdfs }: PdfSelectorProps) {
             </p>
 
             {/* Visual indicator on hover */}
-            <div className="absolute inset-0 bg-gradient-to-r from-red-50 to-red-100 opacity-0 group-hover:opacity-20 rounded-lg transition-opacity pointer-events-none" />
+            <div className="absolute inset-0 bg-linear-to-r from-red-50 to-red-100 opacity-0 group-hover:opacity-20 rounded-lg transition-opacity pointer-events-none" />
           </button>
         ))}
       </div>

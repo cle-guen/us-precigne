@@ -5,6 +5,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
+import { FaEnvelope } from 'react-icons/fa6'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -15,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr">
+    <html lang="fr" data-scroll-behavior="smooth">
       <body className={inter.className}>
         <Header />
 
@@ -31,19 +32,7 @@ export default function RootLayout({
                     href="mailto:usprecigne.omnisports@gmail.com"
                     className="flex items-center gap-2 hover:text-white transition-colors"
                   >
-                    <svg
-                      className="w-5 h-5 flex-shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
+                    <FaEnvelope className="w-5 h-5 shrink-0" />
                     usprecigne.omnisports@gmail.com
                   </a>
                 </div>
@@ -117,9 +106,9 @@ export default function RootLayout({
                     <Image
                       src="/images/logo-ffco-new.png"
                       alt="Logo FFCO"
-                      width={60}
-                      height={40}
-                      className="object-contain"
+                      width={200}
+                      height={92}
+                      style={{ width: 60, height: 'auto' }}
                     />
                   </a>
                 </div>
