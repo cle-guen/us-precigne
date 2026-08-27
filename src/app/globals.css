@@ -1,6 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-accent: #b91c1c;       /* Red 700 */
+  --color-accent-hover: #991b1b; /* Red 800 */
+}
 
 @layer base {
   html {
@@ -8,6 +11,7 @@
   }
   
   body {
-    @apply text-gray-900 bg-gray-50;
+    background-color: #f9fafb; /* Équivalent bg-gray-50 */
+    color: #111827;            /* Équivalent text-gray-900 */
   }
 }

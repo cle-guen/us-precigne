@@ -2,6 +2,8 @@ import { sports } from '@/data/sports'
 import { config } from '@/lib/config'
 import { MetadataRoute } from 'next'
 
+export const dynamic = 'force-static'
+
 export default function sitemap(): MetadataRoute.Sitemap {
   // Pages statiques
   const staticPages = [

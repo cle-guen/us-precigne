@@ -2,7 +2,6 @@ import UspLogo from '@/components/UspLogo'
 import { Sport } from '@/lib/types'
 import Image from 'next/image'
 import PdfSelector from './PdfSelector'
-import RichText from './RichText'
 import ScheduleTable from './ScheduleTable'
 import ScheduleTableFootball from './ScheduleTableFootball'
 import ScheduleTableYoga from './ScheduleTableYoga'
@@ -53,10 +52,49 @@ export default function SportPage({ sport }: SportPageProps) {
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
             Présentation
           </h2>
-          <RichText
-            text={sport.intro}
-            className="text-lg text-gray-700 leading-relaxed"
-          />
+          <div className="text-lg text-gray-700 leading-relaxed space-y-4">
+            {sport.intro.split('\n\n').map((paragraph, index) => {
+              // Detect patterns like **Title:** and convert to styled headings
+              const boldPattern = /\*\*(.*?)\*\*/g
+              const parts = paragraph.split(boldPattern)
+
+              return (
+                <div key={index} className="mb-4">
+                  {parts.map((part, partIndex) => {
+                    if (partIndex % 2 === 1) {
+                      // This is content that was inside **...**
+                      return (
+                        <h3
+                          key={partIndex}
+                          className="text-xl font-bold text-gray-900 mb-2 mt-6"
+                        >
+                          {part}
+                        </h3>
+                      )
+                    } else {
+                      // Regular content
+                      return part
+                        .split('\n')
+                        .map((line, lineIndex) => {
+                          if (line.trim()) {
+                            return (
+                              <p
+                                key={`${partIndex}-${lineIndex}`}
+                                className="mb-2"
+                              >
+                                {line}
+                              </p>
+                            )
+                          }
+                          return null
+                        })
+                        .filter(Boolean)
+                    }
+                  })}
+                </div>
+              )
+            })}
+          </div>
         </section>
 
         {/* Content Image */}

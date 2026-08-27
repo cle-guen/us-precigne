@@ -6,10 +6,12 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 interface SportPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
+
+export const dynamic = 'force-static'
 
 export async function generateStaticParams() {
   return sports.map((sport) => ({
@@ -20,7 +22,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: SportPageProps): Promise<Metadata> {
-  const sport = sports.find((s) => s.slug === params.slug)
+  const { slug } = await params
+  const sport = sports.find((s) => s.slug === slug)
 
   if (!sport) {
     return {
@@ -79,8 +82,9 @@ export async function generateMetadata({
   }
 }
 
-export default function SportDetailPage({ params }: SportPageProps) {
-  const sport = sports.find((s) => s.slug === params.slug)
+export default async function SportDetailPage({ params }: SportPageProps) {
+  const { slug } = await params
+  const sport = sports.find((s) => s.slug === slug)
 
   if (!sport) {
     notFound()
