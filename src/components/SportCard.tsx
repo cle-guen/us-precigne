@@ -1,3 +1,4 @@
+import { stripRichText } from '@/lib/richText'
 import { Sport } from '@/lib/types'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -37,9 +38,11 @@ export default function SportCard({ sport }: SportCardProps) {
               {sport.name}
             </h3>
           </div>
-          <p className="text-gray-600 text-sm line-clamp-3">{sport.intro}</p>
+          <p className="text-gray-600 text-sm line-clamp-3">
+            {stripRichText(sport.intro)}
+          </p>
           <div className="mt-4">
-            <span className="inline-flex items-center text-red-700 text-sm font-medium group-hover:text-red-800">
+            <span className="inline-flex items-center text-accent text-sm font-medium group-hover:text-accent-hover">
               Découvrir
               <svg
                 className="ml-1 w-4 h-4"

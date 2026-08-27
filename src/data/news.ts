@@ -2,6 +2,13 @@ import { NewsItem } from '@/lib/types'
 
 export const news: NewsItem[] = [
   {
+    id: 'forum-des-associations-sportives',
+    title: 'Forum des associations sportives',
+    body: 'Le forum des associations sportives aura lieu le samedi 05 septembre 2026 à Précigné. Venez nombreux !',
+    additionalImages: ['/images/news/affiche_forum_usp.jpg'],
+    sportSlug: 'association',
+  },
+  {
     id: 'telethon-2025',
     title: 'Rendez-vous Téléthon 2025 à Précigné',
     body: `Les associations de Précigné vous invitent à un week-end d’animations pour le Téléthon 2025 !  

@@ -1,6 +1,7 @@
 import SportPage from '@/components/SportPage'
 import { sports } from '@/data/sports'
 import { config } from '@/lib/config'
+import { stripRichText } from '@/lib/richText'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
@@ -30,10 +31,11 @@ export async function generateMetadata({
 
   const baseUrl = config.baseUrl
   const sportUrl = `${baseUrl}/sports/${sport.slug}`
+  const description = `${stripRichText(sport.intro)} Découvrez nos cours, horaires et inscriptions pour ${sport.name.toLowerCase()} à l'US Précigné.`
 
   return {
     title: `${sport.name} - US Précigné`,
-    description: `${sport.intro} Découvrez nos cours, horaires et inscriptions pour ${sport.name.toLowerCase()} à l'US Précigné.`,
+    description,
     keywords: `${sport.name}, ${sport.name.toLowerCase()}, US Précigné, sport, association, cours, horaires, inscription, Précigné`,
     authors: [{ name: 'US Précigné' }],
     creator: 'US Précigné',
@@ -47,7 +49,7 @@ export async function generateMetadata({
       url: sportUrl,
       siteName: 'US Précigné',
       title: `${sport.name} - US Précigné`,
-      description: `${sport.intro} Découvrez nos cours, horaires et inscriptions pour ${sport.name.toLowerCase()} à l'US Précigné.`,
+      description,
       images: [
         {
           url: '/images/og-image.png',
@@ -60,7 +62,7 @@ export async function generateMetadata({
     twitter: {
       card: 'summary_large_image',
       title: `${sport.name} - US Précigné`,
-      description: `${sport.intro} Découvrez nos cours, horaires et inscriptions pour ${sport.name.toLowerCase()} à l'US Précigné.`,
+      description,
       images: ['/images/og-image.png'],
     },
     robots: {

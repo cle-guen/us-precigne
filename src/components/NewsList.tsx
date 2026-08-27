@@ -127,7 +127,7 @@ export default function NewsList({ news }: NewsListProps) {
                     href={item.pdf}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 bg-red-700 text-white text-sm font-medium rounded-md hover:bg-red-800 transition-colors"
+                    className="inline-flex items-center px-4 py-2 bg-accent text-white text-sm font-medium rounded-md hover:bg-accent-hover transition-colors"
                   >
                     <svg
                       className="w-4 h-4 mr-2"

@@ -14,7 +14,6 @@ export default function Header() {
   const mobileMenuPanelRef = useRef<HTMLDivElement>(null)
   const mobileMenuButtonRef = useRef<HTMLButtonElement>(null)
 
-  // Fermer le menu quand on clique en dehors
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -31,7 +30,6 @@ export default function Header() {
     }
   }, [])
 
-  // Fermer le menu avec la touche Escape
   useEffect(() => {
     setIsMounted(true)
     function handleEscape(event: KeyboardEvent) {
@@ -47,7 +45,6 @@ export default function Header() {
     }
   }, [])
 
-  // Bloquer le scroll quand le menu mobile est ouvert
   useEffect(() => {
     const root = document.documentElement
     if (isMobileMenuOpen) {
@@ -58,7 +55,6 @@ export default function Header() {
     return () => root.classList.remove('overflow-hidden')
   }, [isMobileMenuOpen])
 
-  // Fermer le menu mobile quand on clique à l'extérieur
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (!isMobileMenuOpen) return
@@ -85,7 +81,7 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           <Link
             href="/"
-            className="flex items-center gap-3 text-xl font-bold text-red-700 hover:text-red-800 transition-colors"
+            className="flex items-center gap-3 text-xl font-bold text-accent hover:text-accent-hover transition-colors"
           >
             <div className="relative w-7 h-10 sm:w-8 sm:h-12 flex-shrink-0">
               <UspLogo
@@ -101,13 +97,13 @@ export default function Header() {
           <div className="hidden md:flex items-center justify-center space-x-6">
             <Link
               href="/"
-              className="text-gray-700 hover:text-red-700 transition-colors font-medium"
+              className="text-gray-700 hover:text-accent transition-colors font-medium"
             >
               Accueil
             </Link>
             <div className="relative" ref={dropdownRef}>
               <button
-                className="text-gray-700 hover:text-red-700 transition-colors font-medium flex items-center gap-1"
+                className="text-gray-700 hover:text-accent transition-colors font-medium flex items-center gap-1"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 onMouseEnter={() => setIsDropdownOpen(true)}
                 aria-expanded={isDropdownOpen}
@@ -140,7 +136,7 @@ export default function Header() {
                       <Link
                         key={sport.slug}
                         href={`/sports/${sport.slug}`}
-                        className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-700 transition-colors"
+                        className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-accent transition-colors"
                         role="menuitem"
                         onClick={() => setIsDropdownOpen(false)}
                       >
@@ -165,7 +161,7 @@ export default function Header() {
             </div>
             <Link
               href="/actualites"
-              className="text-gray-700 hover:text-red-700 transition-colors font-medium"
+              className="text-gray-700 hover:text-accent transition-colors font-medium"
             >
               Actualités
             </Link>
@@ -187,7 +183,6 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
             <button
               className="text-gray-700 focus:outline-none"
@@ -222,7 +217,6 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Navigation Menu (overlay + animated panel) via portal */}
         {isMounted &&
           createPortal(
             <>
@@ -255,7 +249,7 @@ export default function Header() {
                     <div className="space-y-1 pl-3">
                       <Link
                         href="/"
-                        className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:text-red-700 hover:bg-red-50 rounded-md transition-colors"
+                        className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:text-accent hover:bg-red-50 rounded-md transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         <span>Accueil</span>
@@ -276,7 +270,7 @@ export default function Header() {
 
                       <Link
                         href="/actualites"
-                        className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:text-red-700 hover:bg-red-50 rounded-md transition-colors"
+                        className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:text-accent hover:bg-red-50 rounded-md transition-colors"
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         <span>Actualités</span>
@@ -307,7 +301,7 @@ export default function Header() {
                         <Link
                           key={sport.slug}
                           href={`/sports/${sport.slug}`}
-                          className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:text-red-700 hover:bg-red-50 rounded-md transition-colors"
+                          className="flex items-center justify-between px-3 py-2 text-sm text-gray-700 hover:text-accent hover:bg-red-50 rounded-md transition-colors"
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           <span className="flex items-center gap-3">

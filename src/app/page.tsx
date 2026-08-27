@@ -7,7 +7,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="bg-gray-50 pb-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-white rounded-2xl shadow-lg border-l-8 border-red-700 p-8 md:p-12">
+          <div className="bg-white rounded-2xl shadow-lg border-l-8 border-accent p-8 md:p-12">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
               US Précigné
             </h1>
@@ -16,7 +16,7 @@ export default function HomePage() {
             </p>
             <a
               href="#presentation"
-              className="inline-block bg-red-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-800 transition-colors shadow-lg"
+              className="inline-block bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-accent-hover transition-colors shadow-lg"
             >
               Découvrir notre histoire
             </a>
@@ -209,7 +209,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto sm:max-w-none">
             <a
               href="mailto:usprecigne.omnisports@gmail.com"
-              className="inline-flex items-center justify-center px-6 py-3 bg-red-700 text-white font-semibold rounded-lg hover:bg-red-800 transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-colors"
             >
               <svg
                 className="w-5 h-5 mr-2"

@@ -6,7 +6,7 @@ export default function NotFound() {
       <div className="max-w-2xl w-full text-center">
         {/* 404 Number */}
         <div className="mb-8">
-          <h1 className="text-8xl md:text-9xl font-extrabold text-red-700">
+          <h1 className="text-8xl md:text-9xl font-extrabold text-accent">
             404
           </h1>
         </div>
@@ -23,13 +23,13 @@ export default function NotFound() {
 
         {/* Sport Icons Animation */}
         <div className="flex justify-center gap-4 mb-12 opacity-60">
-          <div className="w-12 h-12 text-red-600 animate-bounce">
+          <div className="w-12 h-12 text-accent animate-bounce">
             <svg viewBox="0 0 24 24" fill="currentColor">
               <circle cx="12" cy="12" r="10" />
             </svg>
           </div>
           <div
-            className="w-12 h-12 text-red-600 animate-bounce"
+            className="w-12 h-12 text-accent animate-bounce"
             style={{ animationDelay: '0.2s' }}
           >
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -37,7 +37,7 @@ export default function NotFound() {
             </svg>
           </div>
           <div
-            className="w-12 h-12 text-red-600 animate-bounce"
+            className="w-12 h-12 text-accent animate-bounce"
             style={{ animationDelay: '0.4s' }}
           >
             <svg viewBox="0 0 24 24" fill="currentColor">
@@ -50,7 +50,7 @@ export default function NotFound() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link
             href="/"
-            className="inline-flex items-center px-6 py-3 bg-red-700 text-white font-semibold rounded-lg hover:bg-red-800 transition-colors shadow-lg border-2 border-red-700"
+            className="inline-flex items-center px-6 py-3 bg-accent text-white font-semibold rounded-lg hover:bg-accent-hover transition-colors shadow-lg border-2 border-accent"
           >
             <svg
               className="w-5 h-5 mr-2"
@@ -69,7 +69,7 @@ export default function NotFound() {
           </Link>
           <Link
             href="/actualites"
-            className="inline-flex items-center px-6 py-3 bg-white text-red-700 font-semibold rounded-lg border-2 border-red-700 hover:bg-red-50 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-white text-accent font-semibold rounded-lg border-2 border-accent hover:bg-red-50 transition-colors"
           >
             <svg
               className="w-5 h-5 mr-2"
@@ -96,35 +96,35 @@ export default function NotFound() {
           <div className="flex flex-wrap justify-center gap-3">
             <Link
               href="/sports/football"
-              className="text-sm text-gray-700 hover:text-red-700 transition-colors font-medium"
+              className="text-sm text-gray-700 hover:text-accent transition-colors font-medium"
             >
               Football
             </Link>
             <span className="text-gray-300">•</span>
             <Link
               href="/sports/gym"
-              className="text-sm text-gray-700 hover:text-red-700 transition-colors font-medium"
+              className="text-sm text-gray-700 hover:text-accent transition-colors font-medium"
             >
               Gymnastique
             </Link>
             <span className="text-gray-300">•</span>
             <Link
               href="/sports/judo"
-              className="text-sm text-gray-700 hover:text-red-700 transition-colors font-medium"
+              className="text-sm text-gray-700 hover:text-accent transition-colors font-medium"
             >
               Judo
             </Link>
             <span className="text-gray-300">•</span>
             <Link
               href="/sports/tennis"
-              className="text-sm text-gray-700 hover:text-red-700 transition-colors font-medium"
+              className="text-sm text-gray-700 hover:text-accent transition-colors font-medium"
             >
               Tennis
             </Link>
             <span className="text-gray-300">•</span>
             <Link
               href="/sports/yoga"
-              className="text-sm text-gray-700 hover:text-red-700 transition-colors font-medium"
+              className="text-sm text-gray-700 hover:text-accent transition-colors font-medium"
             >
               Yoga
             </Link>

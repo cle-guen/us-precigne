@@ -69,7 +69,7 @@ export default function PdfSelector({ pdfs }: PdfSelectorProps) {
             </div>
 
             {/* PDF Title */}
-            <h3 className="text-sm font-medium text-gray-900 group-hover:text-red-700 transition-colors line-clamp-2">
+            <h3 className="text-sm font-medium text-gray-900 group-hover:text-accent transition-colors line-clamp-2">
               {pdf.label}
             </h3>
 

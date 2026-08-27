@@ -31,7 +31,7 @@ export default function PdfModal({
               href={file}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex justify-center items-center px-4 py-4 bg-red-700 text-white text-sm font-medium rounded-md hover:bg-red-800 transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+              className="w-full sm:w-auto inline-flex justify-center items-center px-4 py-4 bg-accent text-white text-sm font-medium rounded-md hover:bg-accent-hover transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
             >
               <svg
                 className="w-4 h-4 mr-2"
