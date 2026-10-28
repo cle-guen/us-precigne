@@ -1,109 +1,57 @@
 'use client'
-
-import React, { useEffect, useRef } from 'react'
+import { useDialog } from '@/lib/useDialog'
+import type { ReactNode } from 'react'
 import { FaXmark } from 'react-icons/fa6'
 
 interface ModalProps {
   isOpen: boolean
   onClose: () => void
-  children: React.ReactNode
+  children: ReactNode
+  title?: string
   size?: 'sm' | 'md' | 'lg' | 'xl' | 'full'
 }
-
 export default function Modal({
   isOpen,
   onClose,
   children,
+  title = 'Document',
   size = 'lg',
 }: ModalProps) {
-  const modalRef = useRef<HTMLDivElement>(null)
-  const previousActiveElement = useRef<HTMLElement | null>(null)
-
-  // Handle escape key
-  useEffect(() => {
-    const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        onClose()
-      }
-    }
-
-    if (isOpen) {
-      // Store the previously active element
-      previousActiveElement.current = document.activeElement as HTMLElement
-
-      document.addEventListener('keydown', handleEscape)
-      document.body.style.overflow = 'hidden'
-
-      // Focus the modal
-      setTimeout(() => {
-        modalRef.current?.focus()
-      }, 100)
-    } else {
-      document.removeEventListener('keydown', handleEscape)
-      document.body.style.overflow = 'unset'
-
-      // Restore focus to previously active element
-      if (previousActiveElement.current) {
-        previousActiveElement.current.focus()
-      }
-    }
-
-    return () => {
-      document.removeEventListener('keydown', handleEscape)
-      document.body.style.overflow = 'unset'
-    }
-  }, [isOpen, onClose])
-
+  const ref = useDialog(isOpen)
   if (!isOpen) return null
-
-  const sizeClasses = {
+  const sizes = {
     sm: 'max-w-md',
     md: 'max-w-lg',
     lg: 'max-w-4xl',
     xl: 'max-w-6xl',
     full: 'max-w-[95vw] max-h-[95vh]',
   }
-
-  const handleBackdropClick = (event: React.MouseEvent) => {
-    if (event.target === event.currentTarget) {
-      onClose()
-    }
-  }
-
   return (
-    <div
-      className="fixed inset-0 z-50 overflow-y-auto"
-      aria-labelledby="modal-title"
-      role="dialog"
+    <dialog
+      ref={ref}
+      aria-label={title}
       aria-modal="true"
+      className={`m-auto w-[calc(100%-2rem)] rounded-lg bg-white p-0 shadow-xl backdrop:bg-black/75 ${sizes[size]}`}
+      onCancel={(event) => {
+        event.preventDefault()
+        onClose()
+      }}
+      onClick={(event) => {
+        if (event.target === event.currentTarget) onClose()
+      }}
     >
-      {/* Backdrop */}
-      <div
-        className="fixed inset-0 bg-black/75 transition-opacity"
-        onClick={handleBackdropClick}
-        aria-hidden="true"
-      />
-
-      {/* Modal content */}
-      <div className="flex min-h-full items-center justify-center p-4">
-        <div
-          ref={modalRef}
-          className={`relative bg-white rounded-lg shadow-xl transform transition-all w-full ${sizeClasses[size]}`}
-          tabIndex={-1}
+      <div className="relative p-6">
+        <button
+          type="button"
+          autoFocus
+          onClick={onClose}
+          className="absolute top-4 right-4 z-10 p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full transition-colors"
+          aria-label="Fermer la fenêtre"
         >
-          {/* Close button */}
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 z-10 p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-full transition-colors"
-            aria-label="Fermer la modal"
-          >
-            <FaXmark className="w-6 h-6" />
-          </button>
-
-          {/* Modal content */}
-          <div className="p-6">{children}</div>
-        </div>
+          <FaXmark className="w-6 h-6" aria-hidden />
+        </button>
+        {children}
       </div>
-    </div>
+    </dialog>
   )
 }

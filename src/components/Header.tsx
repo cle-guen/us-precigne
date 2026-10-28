@@ -10,8 +10,8 @@ import { sports } from '../data/sports'
 export default function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isMounted, setIsMounted] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
+  const dropdownButtonRef = useRef<HTMLButtonElement>(null)
   const mobileMenuPanelRef = useRef<HTMLDivElement>(null)
   const mobileMenuButtonRef = useRef<HTMLButtonElement>(null)
 
@@ -32,9 +32,10 @@ export default function Header() {
   }, [])
 
   useEffect(() => {
-    setIsMounted(true)
     function handleEscape(event: KeyboardEvent) {
       if (event.key === 'Escape') {
+        if (dropdownRef.current?.contains(document.activeElement))
+          dropdownButtonRef.current?.focus()
         setIsDropdownOpen(false)
         setIsMobileMenuOpen(false)
       }
@@ -70,6 +71,17 @@ export default function Header() {
     }
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [isMobileMenuOpen])
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) return
+    const trigger = mobileMenuButtonRef.current
+    mobileMenuPanelRef.current
+      ?.querySelector<HTMLAnchorElement>('a[href]')
+      ?.focus()
+    return () => {
+      trigger?.focus()
+    }
   }, [isMobileMenuOpen])
 
   return (
@@ -108,7 +120,8 @@ export default function Header() {
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 onMouseEnter={() => setIsDropdownOpen(true)}
                 aria-expanded={isDropdownOpen}
-                aria-haspopup="true"
+                aria-controls="desktop-sports-navigation"
+                ref={dropdownButtonRef}
               >
                 Sports
                 <FaChevronDown
@@ -119,16 +132,16 @@ export default function Header() {
               {/* Desktop Dropdown Menu */}
               {isDropdownOpen && (
                 <div
+                  id="desktop-sports-navigation"
                   className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black/5 z-50"
                   onMouseLeave={() => setIsDropdownOpen(false)}
                 >
-                  <div className="py-1" role="menu" aria-orientation="vertical">
+                  <div className="py-1">
                     {sports.map((sport) => (
                       <Link
                         key={sport.slug}
                         href={`/sports/${sport.slug}`}
                         className="flex items-center gap-3 px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-accent transition-colors"
-                        role="menuitem"
                         onClick={() => setIsDropdownOpen(false)}
                       >
                         {sport.logo && (
@@ -180,6 +193,7 @@ export default function Header() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-expanded={isMobileMenuOpen}
               aria-label="Menu de navigation"
+              aria-controls="mobile-navigation"
               ref={mobileMenuButtonRef}
             >
               {isMobileMenuOpen ? (
@@ -191,7 +205,7 @@ export default function Header() {
           </div>
         </div>
 
-        {isMounted &&
+        {isMobileMenuOpen &&
           createPortal(
             <>
               <div
@@ -212,6 +226,29 @@ export default function Header() {
                     ? 'opacity-100 translate-y-0'
                     : 'opacity-0 -translate-y-2 pointer-events-none'
                 }`}
+                id="mobile-navigation"
+                role="dialog"
+                aria-label="Navigation mobile"
+                aria-modal={isMobileMenuOpen || undefined}
+                aria-hidden={!isMobileMenuOpen}
+                inert={!isMobileMenuOpen}
+                onKeyDown={(event) => {
+                  if (event.key !== 'Tab') return
+                  const links =
+                    event.currentTarget.querySelectorAll<HTMLAnchorElement>(
+                      'a[href]',
+                    )
+                  const first = links[0],
+                    last = links[links.length - 1]
+                  if (event.shiftKey && document.activeElement === first) {
+                    event.preventDefault()
+                    last?.focus()
+                  }
+                  if (!event.shiftKey && document.activeElement === last) {
+                    event.preventDefault()
+                    first?.focus()
+                  }
+                }}
                 ref={mobileMenuPanelRef}
               >
                 <div className="px-2 pt-2 pb-3 space-y-3 bg-white border-b border-gray-200 shadow-lg">

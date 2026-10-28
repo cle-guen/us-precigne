@@ -18,9 +18,15 @@ export default function RootLayout({
   return (
     <html lang="fr" data-scroll-behavior="smooth">
       <body className={inter.className}>
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:bg-white focus:p-3 focus:text-black"
+        >
+          Aller au contenu
+        </a>
         <Header />
 
-        <main role="main">{children}</main>
+        <main id="main-content">{children}</main>
 
         <footer className="bg-gray-900 text-white mt-16">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">

@@ -1,12 +1,7 @@
 import UspLogo from '@/components/UspLogo'
 import { Sport } from '@/lib/types'
 import Image from 'next/image'
-import {
-  FaEnvelope,
-  FaFacebook,
-  FaGlobe,
-  FaPhone,
-} from 'react-icons/fa6'
+import { FaEnvelope, FaFacebook, FaGlobe, FaPhone } from 'react-icons/fa6'
 import PdfSelector from './PdfSelector'
 import RichText from './RichText'
 import ScheduleTable from './ScheduleTable'

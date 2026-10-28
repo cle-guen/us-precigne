@@ -11,11 +11,6 @@ export default function ScheduleTableFootball({
   sportName,
   location,
 }: ScheduleTableFootballProps) {
-  // Vérifier s'il y a des notes
-  const hasNotes = schedule.some(
-    (entry) => entry.note && entry.note.trim() !== '',
-  )
-
   return (
     <div>
       {/* Section lieu */}

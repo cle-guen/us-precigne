@@ -1,7 +1,8 @@
 'use client'
 
+import { useDialog } from '@/lib/useDialog'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { FaChevronLeft, FaChevronRight, FaXmark } from 'react-icons/fa6'
 
 interface ImageModalProps {
@@ -19,64 +20,38 @@ export default function ImageModal({
   onClose,
   onNavigate,
 }: ImageModalProps) {
-  const [imageLoaded, setImageLoaded] = useState(false)
-
-  // Navigation avec les touches clavier
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (!isOpen) return
-
-      switch (event.key) {
-        case 'Escape':
-          onClose()
-          break
-        case 'ArrowLeft':
-          if (currentIndex > 0) {
-            onNavigate(currentIndex - 1)
-          }
-          break
-        case 'ArrowRight':
-          if (currentIndex < images.length - 1) {
-            onNavigate(currentIndex + 1)
-          }
-          break
-      }
-    }
-
-    document.addEventListener('keydown', handleKeyDown)
-    return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [isOpen, currentIndex, images.length, onClose, onNavigate])
-
-  // Bloquer le scroll du body quand le modal est ouvert
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'unset'
-    }
-
-    return () => {
-      document.body.style.overflow = 'unset'
-    }
-  }, [isOpen])
-
-  // Reset imageLoaded quand l'image change
-  useEffect(() => {
-    setImageLoaded(false)
-  }, [currentIndex])
-
-  if (!isOpen) return null
+  const modalRef = useDialog(isOpen && Boolean(images[currentIndex]))
+  if (!isOpen || !images[currentIndex]) return null
 
   const currentImage = images[currentIndex]
   const hasMultipleImages = images.length > 1
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
-      onClick={onClose}
+    <dialog
+      ref={modalRef}
+      aria-label={`Image ${currentIndex + 1} sur ${images.length}`}
+      aria-modal="true"
+      className="m-auto w-[calc(100%-2rem)] max-w-7xl bg-transparent p-0 text-white backdrop:bg-black/90"
+      onCancel={(event) => {
+        event.preventDefault()
+        onClose()
+      }}
+      onClick={(event) => {
+        if (event.target === event.currentTarget) onClose()
+      }}
+      onKeyDown={(event) => {
+        if (event.key === 'ArrowLeft' && currentIndex > 0) {
+          event.preventDefault()
+          onNavigate(currentIndex - 1)
+        }
+        if (event.key === 'ArrowRight' && currentIndex < images.length - 1) {
+          event.preventDefault()
+          onNavigate(currentIndex + 1)
+        }
+      }}
     >
       <div
-        className="relative max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center"
+        className="relative max-w-7xl h-[90vh] w-full flex items-center justify-center"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Bouton fermer */}
@@ -112,21 +87,7 @@ export default function ImageModal({
 
         {/* Image principale */}
         <div className="relative w-full h-full flex items-center justify-center">
-          {!imageLoaded && (
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white"></div>
-            </div>
-          )}
-
-          <Image
-            src={currentImage}
-            alt="Image en grand format"
-            fill
-            className={`object-contain transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-            onLoad={() => setImageLoaded(true)}
-            sizes="100vw"
-            priority
-          />
+          <ModalImage key={currentImage} src={currentImage} />
         </div>
 
         {/* Indicateurs de pagination */}
@@ -154,6 +115,28 @@ export default function ImageModal({
           </div>
         )}
       </div>
-    </div>
+    </dialog>
+  )
+}
+
+function ModalImage({ src }: { src: string }) {
+  const [loaded, setLoaded] = useState(false)
+  return (
+    <>
+      {!loaded && (
+        <p className="absolute text-white" role="status">
+          Chargement de l’image…
+        </p>
+      )}
+      <Image
+        src={src}
+        alt="Image en grand format"
+        fill
+        sizes="100vw"
+        priority
+        className={`object-contain transition-opacity duration-300 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+        onLoad={() => setLoaded(true)}
+      />
+    </>
   )
 }
